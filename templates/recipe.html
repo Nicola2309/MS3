@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>I extend base</h2>
+
+    {% for recipe in recipes %}
+        { recipe.recipe_name }
+        { recipe.description }
+        { recipe.created_by }
+    {% endfor %}
+{% endblock %}
