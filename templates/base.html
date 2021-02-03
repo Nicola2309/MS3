@@ -27,7 +27,7 @@
                     <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="#">Profile</a></li>
                     <li><a href="#">Add Recipe</a></li>
-                    <li><a href="#">LogIn</a></li>
+                    <li><a href="{{ url_for('login') }}">LogIn</a></li>
                     <li><a href="#">LogOut</a></li>
                     <li><a href="{{ url_for('register') }}">Register</a></li>
                 </ul>
@@ -39,7 +39,7 @@
                     <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="#">Profile</a></li>
                     <li><a href="#">Add Recipe</a></li>
-                    <li><a href="#">LogIn</a></li>
+                    <li><a href="{{ url_for('login') }}">LogIn</a></li>
                     <li><a href="#">LogOut</a></li>
                     <li><a href="{{ url_for('register') }}">Register</a></li>
         </ul>
@@ -51,9 +51,9 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes">
-                        <h4 class="accent-4 darken-4 center-align">{{ message }}</h4>
+                        <h4 class="accent-2 darken-4 center-align">{{ message }}</h4>
                     </div>
-                {% enfor %}
+                {% endfor %}
             {% endif %}
         {% endwith %}
     </section>

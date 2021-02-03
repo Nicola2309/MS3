@@ -32,25 +32,51 @@ def get_recipes():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    if request.method == "POST"
-    # check for username presence in DB
-    existing_user = mongo.db.users.find_one(
+    if request.method == "POST":
+        # check for username presence in DB
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("register"))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        # Let the user in their session
+        session["user"] = request.form.get("username").lower()
+        flash("Welcome, Food Lover!")
+    return render_template("register.html")
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        # checking Username presence in DB
+        existing_user = mongo.db.users.find_one(
         {"username": request.form.get("username").lower()})
 
-    if existing_user:
-        flash("Username already exists")
-        return redirect(url_for("register"))
+        if existing_user:
+            # Stored hashed password must match user's input
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome, {}".format(request.form.get("username")))
+            else:
+                # if the passwords don't match
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("login"))
 
-    register = {
-        "username": request.form.get("username").lower(),
-        "password": generate_password_hash(request.form.get("password"))
-    }
-    mongo.db.insert_one(register)
+        else:
+            # Username doesn't exist
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
 
-    # Let the user in their session
-    session["user"] = request.form.get("username").lower()
-    flash("Welcome Food Lover")
-return render_template("profile.html")
+    return render_template("login.html")
 
 
 if __name__ == "__main__":
