@@ -5,3 +5,7 @@
 .flashes h4{
     line-height: 2;
 }
+
+.card-action{
+    display: inline-block;
+}
