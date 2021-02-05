@@ -1,4 +1,4 @@
-<{% extends "base.html" %}
+{% extends "base.html" %}
 {% block content %}
 
     <h3 class="accent-text text-lighten-2 center-align"> Add Recipe </h3>
@@ -17,7 +17,7 @@
     <div class="form-group">
         <label for="category_name">Category</label>
         <select name="category_name" id="category_name" class="form-control" required>
-            <option value="" selected disabled>Select Level</option>
+            <option value="" selected disabled>Select Category</option>
             <option>Breakfast</option>
             <option>Lunch</option>
             <option>Dinner</option>
@@ -47,6 +47,7 @@
         <label for="description">Brief Description</label>
         <input type="text" class="form-control" name="description" 
         id="description" aria-describedby="description" maxlength="90" required>
+        {{- recipe.description -}}
     </div>
 
     <!-- Ingredients -->
@@ -54,6 +55,7 @@
         <label for="ingredients">Ingredients</label>
         <input type="text" class="form-control" name="ingredients" id="ingredients"
         aria-describedby="ingredients" minlength="3" required>
+        {{- recipe.ingredients -}}
     </div>
     
     <!-- Preparation -->
@@ -61,6 +63,7 @@
         <label for="preparation">Preparation</label>
         <input type="text" class="form-control" name="preparation" id="preparation"
         aria-describedby="preparation" required>
+        {{- recipe.preparation -}}
     </div>
 
     <!-- Image URL -->
