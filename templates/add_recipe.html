@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+<{% extends "base.html" %}
 {% block content %}
 
     <h3 class="accent-text text-lighten-2 center-align"> Add Recipe </h3>
@@ -17,10 +17,28 @@
     <div class="form-group">
         <label for="category_name">Category</label>
         <select name="category_name" id="category_name" class="form-control" required>
-            <option value="" selected disabled>Select Category</option>
-            {% for category in categories %}
-            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-            {% endfor %}
+            <option value="" selected disabled>Select Level</option>
+            <option>Breakfast</option>
+            <option>Lunch</option>
+            <option>Dinner</option>
+        </select>
+    </div>
+    
+    <!-- Prep time -->
+    <div class="form-group">
+        <label for="prep_time">Prep Time (HH:MM)</label>
+        <input type="text" class="form-control" name="prep_time" 
+        id="prep_time" aria-describedby="prep_time" required>
+    </div>
+    
+    <!-- Difficulty -->
+    <div class="form-group">
+        <label for="difficulty">Difficulty</label>
+        <select  class="form-control" name="difficulty" id="difficulty" required>
+            <option value="" selected disabled>Select Level</option>
+            <option>Easy</option>
+            <option>Medium</option>
+            <option>Hard</option>
         </select>
     </div>
 
@@ -58,28 +76,10 @@
         <input type="text" class="form-control" name="image_source" id="image_source"
             aria-describedby="image_source" required>
     </div>
-    
-    <!-- Prep time -->
-    <div class="form-group">
-        <label for="prep_time">Prep Time (HH:MM)</label>
-        <input type="text" class="form-control" name="prep_time" 
-        id="prep_time" aria-describedby="prep_time" required>
-    </div>
-    
-    <!-- Difficulty -->
-    <div class="form-group">
-        <label for="difficulty">Difficulty</label>
-        <select  class="form-control" name="difficulty" id="difficulty" required>
-            <option value="" selected disabled>Select Level</option>
-            <option>Easy</option>
-            <option>Medium</option>
-            <option>Hard</option>
-        </select>
-    </div>
 
     <!-- Add Button-->
     <button class="btn waves-effect waves-light" type="submit" name="action">Share</button>
 </form>
 </section>
 
-{% endblock %}
+{% endblock %}>
