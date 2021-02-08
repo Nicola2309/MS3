@@ -1,11 +1,70 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>I extend base</h2>
+    <h2>{{ recipe.recipe_name }}</h2>
 
-    {% for recipe in recipes %}
-        { recipe.recipe_name }
-        { recipe.description }
-        { recipe.created_by }
-    {% endfor %}
+    <div class="row container">
+        <div class="col s12 m6 l6">
+            <img class="image-fluid " src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}">
+        </div>
+        <div class="row container">
+            <div class="col s12 m6 l6">
+                <div>
+                    <span>Category:</span> {{ recipe.category_name }}
+                </div>
+                <div>
+                    <span>Time:</span> {{ recipe.prep_time }}
+                </div>
+                <div>
+                    <span>Difficulty:</span> {{ recipe.difficulty }}
+                </div>
+                <div>
+                    <span>Created By:</span> {{ recipe.created_by }}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col s12 m12">
+            <span>Ingredients:<br></span>
+            <span>{{ recipe.recipe_ingredients }}</span>
+        </div>
+
+        <div class="col s12 m12">
+            <span>Preparation: <br></span>
+            <span>{{ recipe.preparation }}</span>
+        </div>
+
+
+        <div class="col s12 center-align">
+            <div class="col s4">
+                <a href="{{ url_for('get_recipes') }}" class="btn btn-light">Recipes</a>
+            </div>
+            {% if session.user|lower == recipe.created_by|lower %}
+
+            <div class="col s4">
+                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small">Edit</a>
+            </div>
+
+            <div class="col s4"><a href="#modal-question" 
+                class="btn-small light-blue lighten-1 modal-trigger">Delete</a>
+            </div>
+
+
+            <div class="modal" id="modal-question">
+                <div>
+                    <i class="fas fa-exclamation-circle red-text text-darken-3"></i>
+                    <p>
+                        Do you want to Delete this recipe?
+                    </p>
+                </div>
+                <div>
+                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small modal-close"> Delete</a>
+                    <a class="btn-small modal-close">Cancel</a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
 {% endblock %}

@@ -19,11 +19,6 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/home")
-def home():
-    return render_template("recipes.html")
-
-
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
@@ -66,16 +61,16 @@ def login():
     if request.method == "POST":
         # checking Username presence in DB
         existing_user = mongo.db.users.find_one(
-        {"username": request.form.get("username").lower()})
+            {"username": request.form.get("username").lower()})
 
         if existing_user:
             # Stored hashed password must match user's input
             if check_password_hash(
                 existing_user["password"], request.form.get(
                     "password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
-                    return redirect(url_for(
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for(
                         "profile", username=session["user"]))
             else:
                 # if the passwords don't match
@@ -131,6 +126,13 @@ def add_recipe():
     return render_template("add_recipe.html")
 
 
+@app.route("/recipe/<recipe_id>")
+def recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    print(recipe)
+    return render_template("recipe.html", recipe=recipe)
+
+
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
@@ -154,9 +156,9 @@ def edit_recipe(recipe_id):
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
-    mongo.db.recipes.remove({"_id": ObjectId(task_id)})
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Deleted")
-    return redirect(url_for("get_tasks"))
+    return redirect(url_for("get_recipes"))
 
 
 if __name__ == "__main__":
