@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="accent-text text-lighten-2 center-align"> Add Recipe </h3>
+    
 
-<section>
-<form method="POST" action="{{ url_for('add_recipe') }}">
+<section class="note-img">
+    <h3 class="accent-text text-lighten-2 center-align"> Add Recipe </h3>
+    
+<form class="form-width" method="POST" action="{{ url_for('add_recipe') }}">
 
     <!-- Recipe Name -->
     <div class="form-group">

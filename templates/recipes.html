@@ -1,9 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="red-text text-darken-2 center-align"> Health & Recipes </h3>
+    <div class="hero-img">
+   
+    </div>
 
-<div class="row card-panel grey lighten-5">
+
+
+    <div class="row cons-width">
+        <div class="col s12 m6 l6">
+            <article>
+                <img id="hero" src="../static/images/logo2.png" alt="logo">
+            </article>
+            <article>
+                <p>This online recipe book found its purpose on the recently released Harvard Study on the perfect diet for humans and the planet, the "Planetary Health Diet". <br> Founded on years of studies on food cultures around the world it sums up the perfect proportion of Whole Grains, Vegetables and Healthy Proteins which generally guarantee enormous benefits on the human body nutrition and health; interestingly what is generally the best for a healthy body is specularly the best use for the planet soil and see resources. <br> These clear results provide us with a higher-quality and food-richer future through a simple tool, a plate!</p>
+            </article>
+        </div>
+        <div class="col s12 m6 l6">
+            <article>
+                <img id="h-plate" src="../static/images/harvard-plate.jpg" alt="Healthy Eating Plate Concept">
+                <p>Copyright © 2011 Harvard University. For more information about The Healthy Eating Plate, please see The Nutrition Source, Department of Nutrition, Harvard T.H. Chan School of Public Health, http://www.thenutritionsource.org and Harvard Health Publications, health.harvard.edu.</p>
+            </article>
+        </div>
+    </div>
+
+<!-- Search Recipe Function-->
+<div class="row card-panel grey lighten-5 search-rec">
     <form action="{{ url_for('search') }}" method="post" class="col s12">
         <div class="row valign-wrapper center-align">
             <div class="input-field col s12 m8">
@@ -11,6 +33,8 @@
                 <input type="text" name="query" id="query" minlength="3" class="validate" required>
                 <label for="query">Search Recipes</label>
             </div>
+            <a href="{{ url_for('get_recipes') }}" class="btn">Cancel</a>
+            <button type="submit" class="btn">Search</button>
         </div>
     </form>
 </div>
@@ -18,56 +42,57 @@
 
 <!-- Recipes Cards-->
 {% if recipes|length > 0 %}
-    {% for recipe in recipes%}
-        <div class="col s12 m6 l4">
-            <h2 class="header">Horizontal Card</h2>
-            <div class="card horizontal">
-                <div class="card-image">
-                    <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}">
-                </div>
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
-                            <span class="recipe-name">{{ recipe.recipe_name }}</span>
-                        </a>
-                        <p class="recipe-desc">{{ recipe.preparation }}</p>
+    <div class="row">
+        {% for recipe in recipes%}
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}">
                     </div>
-                    <div class="row">
-
-                        <!-- Access Recipe Function-->
-                        <div class="card-action">
-                            <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">Read More...</a>
+                        <div class="card-content">
+                            <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
+                                <span class="recipe-name">{{ recipe.recipe_name }}</span>
+                            </a>
+                            <p>{{ recipe.category_name }}</p>
+                            <p class="recipe-desc">{{ recipe.preparation }}</p>
                         </div>
-
-                        <!--Edit/Delete Recipe Functions -->
-                        <div class="card-action">
-                            {% if session.user|lower == recipe.created_by|lower %}
-
-                            <a href="#modal-question" 
-                                class="modal-trigger">Delete</a>
-                            
-
-                            <div class="modal" id="modal-question">
-                                <div>
-                                    <i class="fas fa-exclamation-circle red-text text-darken-3"></i>
-                                    <p>
-                                        Do you want to Delete this recipe?
-                                    </p>
-                                </div>
-                                <div>
-                                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small modal-close"> Delete</a>
-                                    <a class="btn-small modal-close">Cancel</a>
-                                </div>
+                        <div class="row">
+    
+                            <!-- Access Recipe Function-->
+                            <div class="card-action">
+                                <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">Read More...</a>
                             </div>
-
-                            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a>
-                            {% endif %}
+    
+                            <!--Edit/Delete Recipe Functions -->
+                            <div class="card-action">
+                                {% if session.user|lower == recipe.created_by|lower %}
+    
+                                <a href="#modal-question" 
+                                    class="modal-trigger">Delete</a>
+                                
+    
+                                <div class="modal" id="modal-question">
+                                    <div>
+                                        <i class="fas fa-exclamation-circle red-text text-darken-3"></i>
+                                        <p>
+                                            Do you want to Delete this recipe?
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small modal-close"> Delete</a>
+                                        <a class="btn-small modal-close">Cancel</a>
+                                    </div>
+                                </div>
+    
+                                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a>
+                                {% endif %}
+                            </div>
                         </div>
-                    </div>
+                    
                 </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
     {% else %}
         <h4 class="accent-text text-lighten-2 center-align">No Result Found</h4>
     {% endif %}
