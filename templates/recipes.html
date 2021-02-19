@@ -1,29 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="hero-img">
    
-    </div>
-
-
-
-    <div class="row cons-width">
-        <div class="col s12 m6 l6">
-            <article>
-                <img id="hero" src="../static/images/logo2.png" alt="logo">
-            </article>
-            <article>
-                <p>This online recipe book found its purpose on the recently released Harvard Study on the perfect diet for humans and the planet, the "Planetary Health Diet". <br> Founded on years of studies on food cultures around the world it sums up the perfect proportion of Whole Grains, Vegetables and Healthy Proteins which generally guarantee enormous benefits on the human body nutrition and health; interestingly what is generally the best for a healthy body is specularly the best use for the planet soil and see resources. <br> These clear results provide us with a higher-quality and food-richer future through a simple tool, a plate!</p>
-            </article>
-        </div>
-        <div class="col s12 m6 l6">
-            <article>
-                <img id="h-plate" src="../static/images/harvard-plate.jpg" alt="Healthy Eating Plate Concept">
-                <p>Copyright © 2011 Harvard University. For more information about The Healthy Eating Plate, please see The Nutrition Source, Department of Nutrition, Harvard T.H. Chan School of Public Health, http://www.thenutritionsource.org and Harvard Health Publications, health.harvard.edu.</p>
-            </article>
-        </div>
-    </div>
-
 <!-- Search Recipe Function-->
 <div class="row card-panel grey lighten-5 search-rec">
     <form action="{{ url_for('search') }}" method="post" class="col s12">
@@ -42,7 +20,7 @@
 
 <!-- Recipes Cards-->
 {% if recipes|length > 0 %}
-    <div class="row">
+    <div class="row" style="width:90%;">
         {% for recipe in recipes%}
             <div class="col s12 m6 l4">
                 <div class="card">
@@ -70,7 +48,6 @@
                                 <a href="#modal-question" 
                                     class="modal-trigger">Delete</a>
                                 
-    
                                 <div class="modal" id="modal-question">
                                     <div>
                                         <i class="fas fa-exclamation-circle red-text text-darken-3"></i>

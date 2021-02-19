@@ -19,6 +19,11 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
@@ -45,7 +50,8 @@ def register():
 
         register = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "user_img": request.form.get("user_img")
         }
         mongo.db.users.insert_one(register)
 
@@ -88,13 +94,29 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # Display Username in session using DB data
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", user=user)
 
     return redirect(url_for("login"))
+
+
+@app.route("/edit_profile/<username>", methods=["GET", "POST"])
+def edit_profile(user):
+    # Update profile function
+    if request.method == "POST":
+        user = mongo.db.users.find_one({"username": user.lower()})
+        submit = {
+            "username": user["username"],
+            "password": user["password"],
+            "user_img": user("user_img"),
+        }
+        mongo.db.users.update({"_id": ObjectId(user)}, submit)
+        flash("Recipe Corrected")
+
+    return render_template("profile.html", user=user)
 
 
 @app.route("/logout")
@@ -103,6 +125,16 @@ def logout():
     flash("See you soon Chef!")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/delete_profile/<username>")
+def delete_profile(username):
+
+    mongo.db.users.remove({"username": username.lower()})
+    flash("Profile Deleted")
+    session.pop("user")
+
+    return redirect(url_for("register"))
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
@@ -159,6 +191,8 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Deleted")
     return redirect(url_for("get_recipes"))
+
+
 
 
 if __name__ == "__main__":

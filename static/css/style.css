@@ -7,28 +7,6 @@ body{
     text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.5)
 }
 
-.flashes h4{
-    line-height: 2;
-}
-
-.transparent{
-    background-color: rgba(0, 0, 0, 0) !important;
-    box-shadow: none;
-    height: 125px;
-}
-
-#logo{
-    margin-left: 12px;
-    margin-top: 3px;
-    height: 123px;
-}
-
-nav ul a{
-    line-height: 135px;
-    font-size: 1.5em;
-    color: green;
-}
-
 .container{
     padding: 0;
     width: 100%;
@@ -38,11 +16,41 @@ nav ul a{
     padding: 0;
 }
 
+hr{
+    width: 90%;
+}
+
+.flashes h4{
+    line-height: 2;
+}
+
+.transparent{
+    box-shadow: none;
+    height: 125px;
+}
+
+
+/*  Navigation CSS  */
+#logo{
+    margin-left: 12px;
+    margin-top: 3px;
+    height: 123px;
+}
+
+nav ul a{
+    font-family: 'Lily Script One', cursive;
+    line-height: 135px;
+    font-size: 2em;
+    color: #00CB00;
+}
+
+
+/*  Hero-Image, Landing Page Styling  */
 .hero-img{
     z-index: -1;
     position: relative;
     top: -125px;
-    background: url('../images/hero.jpg') no-repeat top;
+    background: url('../images/paprika.jpg') no-repeat top;
     background-position: center;
     background-size: cover;
     height: calc(100vh + 81px);
@@ -50,16 +58,38 @@ nav ul a{
     width: 100%;
 }
 
-#hero{
-    width: 70%;;
+.present{
+    color: #FF8119 ;
+    right: 20px;
+    position: absolute;
+    top: 30%;
 }
 
-.cons-width{
-    width: 90%;
-    margin: 0 auto;
+.present h3{
+    font-size: 3.5em;
 }
 
-.search-rec{
+.present h5{
+    font-size: 2.3em;
+}
+
+i.medium{
+    font-size: 2.5em!important;
+}
+
+.present-btn{
+    margin-top: 27px;
+    background-color: #00CB00;
+}
+
+/*  Mission Section Styling  */
+
+.head-text{
+    color: #FF8119;
+    text-align: center;
+}
+
+.desk-width{
     width: 90%;
     margin: 0 auto;
 }
@@ -68,6 +98,15 @@ nav ul a{
     width: 100%;
 }
 
+
+/*  SearchBar CSS  */
+.search-rec{
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+/* Recipe Cards CSS */
 .card-image{
     background-image: cover;
 }
@@ -78,12 +117,6 @@ nav ul a{
 
 
 /*---- form Add/Edit Recipe ----*/
-
-.note-img{
-    background-image: url(../images/add-recipe.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-}
 
 .form-width{
     width: 80%;
