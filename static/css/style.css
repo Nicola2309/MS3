@@ -60,7 +60,7 @@ nav ul a{
 
 .present{
     color: #FF8119 ;
-    right: 20px;
+    right: 60px;
     position: absolute;
     top: 30%;
 }
@@ -89,6 +89,10 @@ i.medium{
     text-align: center;
 }
 
+#green-ball{
+    max-width: 100%;
+}
+
 .desk-width{
     width: 90%;
     margin: 0 auto;
@@ -96,6 +100,10 @@ i.medium{
 
 #h-plate{
     width: 100%;
+}
+
+.carousel{
+    max-width: 100%;
 }
 
 
@@ -106,19 +114,42 @@ i.medium{
 }
 
 
-/* Recipe Cards CSS */
-.card-image{
-    background-image: cover;
+/* Recipe Cards Style */
+.card-image img{
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
 }
 
 .card-action{
     display: inline-block;
 }
 
+.card-content{
+    text-align: center;
+}
 
 /*---- form Add/Edit Recipe ----*/
 
 .form-width{
     width: 80%;
     margin: 21px auto;
+}
+
+
+
+/* Footer */
+
+.page-footer{
+    margin-top: 60px;
+    background-color: #00CB00;
+}
+
+.align{
+    text-align: center;
+}
+
+.social-icon{
+    font-size: 1.8em;
+    margin-right: 12px;
 }

@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
-   
+   <h3 class="head-text"> All Recipes</h3>
+   <hr style="margin-bottom:45px;">
 <!-- Search Recipe Function-->
 <div class="row card-panel grey lighten-5 search-rec">
     <form action="{{ url_for('search') }}" method="post" class="col s12">
@@ -21,17 +22,17 @@
 <!-- Recipes Cards-->
 {% if recipes|length > 0 %}
     <div class="row" style="width:90%;">
-        {% for recipe in recipes%}
-            <div class="col s12 m6 l4">
+        {% for recipe in recipes %}
+            <div class="col s12 m4">
                 <div class="card">
                     <div class="card-image">
                         <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}">
                     </div>
                         <div class="card-content">
                             <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
-                                <span class="recipe-name">{{ recipe.recipe_name }}</span>
+                                <h5 class="recipe-name">{{ recipe.recipe_name }}</h5>
                             </a>
-                            <p>{{ recipe.category_name }}</p>
+                            <h6>{{ recipe.category_name }}</h6>
                             <p class="recipe-desc">{{ recipe.preparation }}</p>
                         </div>
                         <div class="row">
