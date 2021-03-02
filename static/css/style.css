@@ -20,6 +20,10 @@ hr{
     width: 90%;
 }
 
+.section-margin{
+    margin-top: 72px;
+}
+
 .flashes h4{
     line-height: 2;
 }
@@ -37,10 +41,27 @@ hr{
     height: 123px;
 }
 
-nav ul a{
+nav ul a {
     font-family: 'Lily Script One', cursive;
     line-height: 135px;
-    font-size: 2em;
+    font-size: 2em!important;
+    color: #00CB00!important;
+}
+
+ul .nav-link a{
+    font-family: 'Lily Script One', cursive;
+    font-size: 2em!important;
+    color: #00CB00!important;
+    margin-top: 42px;
+    text-align: center;
+}
+
+.navbar-scroll.scrolled{
+    background-color: white!important;
+    transition: 0.3s ease-in ;
+}
+
+.fas.fa-bars{
     color: #00CB00;
 }
 
@@ -77,19 +98,30 @@ i.medium{
     font-size: 2.5em!important;
 }
 
-.present-btn{
+.fas,
+.far{
+    margin-left: 12px;
+}
+
+.present-buttn{
+    width: 153px;
     margin-top: 27px;
     background-color: #00CB00;
+}
+
+.present-buttn:hover{
+    background-color: #009900;
 }
 
 /*  Mission Section Styling  */
 
 .head-text{
+    margin: 30px 10px;    
     color: #FF8119;
     text-align: center;
 }
 
-#green-ball{
+#green-hand{
     max-width: 100%;
 }
 
@@ -106,6 +138,37 @@ i.medium{
     max-width: 100%;
 }
 
+.row .present-buttn{
+    display: flex;
+    margin: 42px auto 15px;
+}
+
+ul .list-style{
+    margin: auto 42px auto 21px;
+    list-style-type: disc!important;
+}
+
+/* Sliding/Transition effects*/
+
+.text-1-slide-init{
+    opacity: 0;
+    width: 95%;
+    transform: translateY(0px);
+    transition: 0.6s all ease-in;
+    -webkit-transition: 0.6s all ease-in;
+    -moz-transition: 0.6s all ease-in;
+    -o-transition: 0.6s all ease-in;
+}
+
+.text-1-slide-end{
+    opacity: 0;
+    transform: translateY(-33px);
+    transition: 0.6s all ease-in-out;
+    -webkit-transition: 0.6s all ease-in-out;
+    -moz-transition: 0.6s all ease-in-out;
+    -o-transition: 0.6s all ease-in-out;
+
+}
 
 /*  SearchBar CSS  */
 .search-rec{
@@ -141,7 +204,7 @@ i.medium{
 /* Footer */
 
 .page-footer{
-    margin-top: 60px;
+    margin-top: 72px;
     background-color: #00CB00;
 }
 
@@ -152,4 +215,104 @@ i.medium{
 .social-icon{
     font-size: 1.8em;
     margin-right: 12px;
+}
+
+
+/* Media Queries */
+
+@media screen and (min-width: 750px){
+    #title-margin{
+    text-align: center;
+    margin-bottom: 6%;
+    margin-top: 3%;
+}
+    
+}
+
+@media screen and (min-width: 1023px){
+    .article-text{
+        display: grid;
+        margin: 8% 3%;
+    }
+}
+
+@media screen and (min-width: 1028px){
+    .center-text{
+        position: absolute;
+        display: grid;
+        margin: 8% 15%;
+}
+    .article-text{
+        display: grid;
+        margin: 8% 14%;
+    }
+
+    ul h6{
+        margin-top: 27px;
+    }
+
+    ul .list-style{
+    margin: 8% 42px auto 21px !important;
+    }
+}
+
+@media screen and (max-width: 770px){
+    .present-logo{
+        width: 39%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+.transparent{
+    height: 115px;
+}
+
+    #logo{
+        max-width: 170px;
+        height: auto;
+    }
+
+    .present{
+        left: 201px;
+        top: 22%;
+    }
+
+    .present h5{
+        display: none;
+    }
+
+    .present-logo{
+        width: 80%;
+    }
+
+}
+
+
+@media screen and (max-width: 360px) {
+    .transparent{
+        height: 95px;
+    }
+
+    #logo{
+        max-width: 126px;
+        height: auto;
+    }
+
+    .present{
+        right: 1px!important;
+        left: 150px;
+    }
+
+    .present h3{
+        font-size: 3.2em;
+    }
+
+}
+
+
+@media screen and (max-width: 280px) {
+    .present{
+        left: 109px!important;
+    }
+
 }

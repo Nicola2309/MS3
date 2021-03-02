@@ -5,48 +5,52 @@
     <div class="present">
         <h3>Prepare healthy days</h3>
         <h5>Happy Body, Happy Planet</h5>
-        <div>
-            <a href="#idea" class="waves-effect waves-light btn present-btn"><i
-                    class="medium material-icons right">keyboard_arrow_down</i>About us</a>
-            <a href="/" class="waves-effect waves-light btn present-btn"><i
-                    class="medium material-icons right">navigate_next</i>Recipes</a>
+        <div class="container">
+            <a href="#idea" class="waves-effect waves-light btn present-buttn">About us <i
+                    class="fas fa-chevron-right"></i></a>
+            <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn present-buttn">Recipes <i
+                    class="fas fa-chevron-right"></i></a>
         </div>
     </div>
-
 </div>
 
 
-<hr style="margin-top:-85px;">
+<hr style="margin-top:-30px;">
 <h3 id="idea" class="head-text"> The Idea Behind Our Cookbook</h3>
 <hr style="margin-bottom:33px;">
 
 <div class="row desk-width ">
-    <div class="col s12 m6">
-        <article style="text-align:center;">
-            <img src="../static/images/logo2.png" alt="logo">
+    <div class="col s12 m12 text-1-slide-init">
+        <article style="text-align: center;">
+            <img class="present-logo hide-on-large-only" src="../static/images/logo2.png" alt="logo">
         </article>
-        <article>
+    </div>
+    <div class="col s12 m12 l6 text-1-slide-init">
+        <article class="center-text">
             <p>This online recipe book found its purpose on the recently released Harvard Study on the perfect diet for
-                humans and the planet, the "Planetary Health Diet". <br> Founded on years of studies on food cultures
+                humans and the planet, the "Planetary Health Diet". </p>
+            <p> Founded on years of studies on food cultures
                 around the world it sums up the perfect proportion of Whole Grains, Vegetables and Healthy Proteins
-                which generally guarantee enormous benefits on the human body nutrition and health; interestingly what
-                is generally the best for a healthy body is specularly the best use for the planet soil and see
-                resources. <br> These clear results provide us with a higher-quality and food-richer future through a
+                which generally guarantee enormous benefits on the human body nutrition and health. </p>
+            <p>Interestingly, what
+                is generally the best for a healthy body is specularly the best for the use of the planet soil and sea
+                resources.
+                These clear results provide us with a higher-quality and food-richer future through a
                 simple tool, a plate!</p>
         </article>
     </div>
-    <div class="col s12 m6">
-        <img id="green-ball" src="../static/images/green-ball.jpg" alt="ball on the ground in the woods">
+    <div class="col s12 m12 l6 text-1-slide-init">
+        <img id="green-hand" src="../static/images/sustain-eat.jpg" alt="plant on child hand">
     </div>
 </div>
 
 
-<hr style="margin-top: 21px;">
+<hr class="section-margin">
 <h3 class="head-text"> The Studies</h3>
 <hr style="margin-bottom:33px;">
 
 <div class="row desk-width">
-    <div class="col s12 m6 l6">
+    <div class="col s12 m12 l6">
         <article>
             <img id="h-plate" src="../static/images/harvard-plate.jpg" alt="Healthy Eating Plate Concept">
             <p>Copyright © 2011 Harvard University. For more information about The Healthy Eating Plate, please see The
@@ -54,72 +58,55 @@
                 http://www.thenutritionsource.org and Harvard Health Publications, health.harvard.edu.</p>
         </article>
     </div>
-    <div class="col s12 m6 l6">
-        <h5>If your Food Passion turns into "Nerdy" at times, here are some articles you'll sure enjoy:</h5>
-        <ul>
-            <li>
-                <h6><a href="https://www.hsph.harvard.edu/nutritionsource/sustainability/plate-and-planet/"
-                        target="_blank"> Plate and the Planet</a>: <br></h6>
-                <p>In this article is discussed the differnt impact of the different food products on the planet and the
-                    suggested quantity to eat (in grams per day) calculated on a healthy body in order to keep it so.
-                </p>
-            </li>
-            <li>
-                <h6><a href="https://www.hsph.harvard.edu/nutritionsource/sustainability/food-waste/food-waste-home/"
-                        target="_blank">How to Shopping and Storing</a>: <br></h6>
-                <p>This article contains shopping tips to minimize food waste, as well as tips to store and use the
-                    products when they are at their best.</p>
-            </li>
-            <li>
-                <h6><a href="https://www.hsph.harvard.edu/nutritionsource/meal-prep/" target="_blank">Weekly Meal
-                        Prep</a>: <br></h6>
-                <p>As The title says, here you'll find some ideas on how to build a week meal plan, the advantages of
-                    it, and the storing times for your cooked or cut food.</p>
-            </li>
-            <li>
-                <h6><a href="https://www.hsph.harvard.edu/nutritionsource/strategies-nutrition-budget/" target="_blank">
-                        Strategies for Eating Well on a Budget</a>: <br></h6>
-                <p>Even though the article is focused on the American Market the strategies outlined can be used by
-                    everyone who struggles with managing the fridge and the pocket in a healthy way.</p>
-            </li>
-            <li>
-                <h6><a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(18)31788-4/fulltext?utm_campaign=tleat19&utm_source=hub_page"
-                        target="_blank">Healthy Diets from Sustainable Food Systems</a>: <br></h6>
-                <p>This is an extensive article from The Lancet with a big amount of data on the relations between
-                    healthy diets and resources management.</p>
-            </li>
-            <li>
-                <h6><a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(07)61256-2/fulltext"
-                        target="_blank">Food, livestock production, energy, climate change, and health</a>: <br></h6>
-                <p>A long historical view till nowadays consumption, a specific section on the relation between
-                    agricultural and red meat emissions and prospects for food yields.</p>
-            </li>
-        </ul>
+    <div class="col s12 m12 l6">
+        <article class="article-text">
+            <h5>If your Food Passion turns into "Nerdy" at times this section is for you</h5>
+            <p>Articles from Harvard with dietary suggestions, advices on how to manage your shopping list and spare
+                while keeping high the quality of your food, or, if you are brave enough, articles on the whole food
+                chain from the Lancet.</p>
+            <div class="row">
+                <a href="{{ url_for('articles') }}" class="waves-effect waves-light btn present-buttn">Articles <i
+                        class="far fa-newspaper"></i></a>
+            </div>
+        </article>
+
     </div>
 </div>
 
 
-<hr style="margin-top: 21px;">
+<hr class="section-margin">
 <h3 class="head-text"> Take Care</h3>
 <hr style="margin-bottom:33px;">
 
 <div class="row desk-width">
-<div class="col s12 m6">
-    <h5>Take care of your self and your loved ones </h5>
-    <p>Having a complete meal is the superpower of a productive day. <br>
-        Make it become a stay-together activity with family or inmates helping eachother to prepare the meals decided for the upcoming days while sharing care and a nice conversation in the kitchen.<br>
-        Whole grains and veggies have a long cooking time creating the perfect occasion to take some time together.
-    </p>
+    <div class="col s12">
+        <h5 id="title-margin">Take care of your self and your loved ones </h5>
+    </div>
 </div>
-<div class="col s12 m6 carousel carousel-slider">
-    <a class="carousel-item" href="#one!"><img src="../static/images/mo-daughter-help.jpg"></a>
-    <a class="carousel-item" href="#two!"><img src="../static/images/supervised-mixing.jpg"></a>
-    <a class="carousel-item" href="#three!"><img src="../static/images/cookie-tasting.jpg"></a>
-    <a class="carousel-item" href="#four!"><img src="../static/images/couple-cooking.jpg"></a>
-    <a class="carousel-item" href="#five!"><img src="../static/images/cooking-mom-supporters.jpg"></a>
-</div>
-
-</div>
+    <div class="row desk-width">
+        <div class="col s12 m6">
+        <ul>
+            <h6 style="width: 95%;">Having a complete meal is the superpower of a productive day:</h6>
+            <li class="list-style">
+                <p>Make it become a stay-together activity with your family or inmates</p>
+            </li>
+            <li class="list-style">
+                <p>help eachother prepare the meals decided for the upcoming days</p>
+            </li>
+            <li class="list-style">
+                <p>Whole grains and veggies have a long cooking time which creates the opportunity for conversational time
+                    together or in a videocall</p>
+            </li>
+        </ul>
+        </div>
+        <div class="col s12 m6 carousel carousel-slider">
+        <a class="carousel-item" href="#one!"><img src="../static/images/mo-daughter-help.jpg"></a>
+        <a class="carousel-item" href="#two!"><img src="../static/images/supervised-mixing.jpg"></a>
+        <a class="carousel-item" href="#three!"><img src="../static/images/cookie-tasting.jpg"></a>
+        <a class="carousel-item" href="#four!"><img src="../static/images/couple-cooking.jpg"></a>
+        <a class="carousel-item" href="#five!"><img src="../static/images/cooking-mom-supporters.jpg"></a>
+    </div>
+    </div>
 
 
 
