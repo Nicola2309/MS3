@@ -119,6 +119,11 @@ def edit_profile(user):
     return render_template("profile.html", user=user)
 
 
+@app.route("/articles")
+def articles():
+    return render_template("articles.html")
+
+
 @app.route("/logout")
 def logout():
     # User session cookies removal
@@ -180,7 +185,7 @@ def edit_recipe(recipe_id):
             "created_by": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
-        flash("Recipe Corrected")
+        flash("Recipe Improved")
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("edit_recipe.html", recipe=recipe)
