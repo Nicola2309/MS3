@@ -2,21 +2,21 @@
 {% block content %}
 
 <div class="hero-img">
-    <div class="present">
+</div>
+<div class="present">
         <h3>Prepare healthy days</h3>
         <h5>Happy Body, Happy Planet</h5>
-        <div class="container">
-            <a href="#idea" class="waves-effect waves-light btn present-buttn">About us <i
-                    class="fas fa-chevron-right"></i></a>
+        <div class="btn-wrapper">
+            <a href="#idea" id="smooth-scroll" class="waves-effect waves-light btn present-buttn">About us <i
+                    class="fas fa-chevron-down"></i></a>
             <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn present-buttn">Recipes <i
                     class="fas fa-chevron-right"></i></a>
         </div>
     </div>
-</div>
 
 
-<hr style="margin-top:-30px;">
-<h3 id="idea" class="head-text"> The Idea Behind Our Cookbook</h3>
+<hr id="idea" style="margin-top:-30px;">
+<h3  class="head-text"> The Idea Behind Our Cookbook</h3>
 <hr style="margin-bottom:33px;">
 
 <div class="row desk-width ">
