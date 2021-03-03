@@ -1,6 +1,12 @@
+html{
+    height: 100%;
+    min-height: 100%;
+}
+
 body{
     overflow-x: hidden;
     margin: auto 0;
+    height: 100vh;
 }
 
 .text-shadow{
@@ -65,6 +71,13 @@ ul .nav-link a{
     color: #00CB00;
 }
 
+.page-indicator{
+    margin-top: 100px;
+    margin-bottom: 9px;
+    color: #FF8119;
+    text-align: center;
+}
+
 
 /*  Hero-Image, Landing Page Styling  */
 .hero-img{
@@ -104,13 +117,17 @@ i.medium{
 }
 
 .present-buttn{
-    width: 153px;
+    width: 153px !important;
     margin-top: 27px;
     background-color: #00CB00;
 }
 
 .present-buttn:hover{
     background-color: #009900;
+}
+
+.btn-wrapper {
+    position: relative !important;
 }
 
 /*  Mission Section Styling  */
@@ -139,8 +156,7 @@ i.medium{
 }
 
 .row .present-buttn{
-    display: flex;
-    margin: 42px auto 15px;
+    margin: 42px auto 15px !important;
 }
 
 ul .list-style{
@@ -171,9 +187,42 @@ ul .list-style{
 }
 
 /*  SearchBar CSS  */
-.search-rec{
+.input-field{
+    margin: 0 auto;
+}
+
+.search-recipe{
     width: 90%;
     margin: 0 auto;
+}
+
+.fas.fa-search{
+    margin: auto;
+    color: #00CB00!important;
+}
+
+.search-btn{
+    margin: 5px;
+    background-color: #00FB00;
+}
+
+.reset-btn{
+    margin: 5px;
+    background-color: #FF8527;
+}
+
+.category-btns{
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.category-btns a{
+    color: rgb(48, 46, 46);
+    background-color: #fafafa;
+    font-weight: bold;
+    margin: 20px;
+    width: 111px;
 }
 
 
@@ -186,6 +235,10 @@ ul .list-style{
 
 .card-action{
     display: inline-block;
+}
+.card-action #read-more{
+    color: #FF8527;
+    font-weight: bold;
 }
 
 .card-content{
@@ -206,6 +259,8 @@ ul .list-style{
 .page-footer{
     margin-top: 72px;
     background-color: #00CB00;
+    position: sticky;
+    top: 100%;
 }
 
 .align{
@@ -217,10 +272,35 @@ ul .list-style{
     margin-right: 12px;
 }
 
+/*  Register Form */
+.form-panel{
+    margin: 3% auto;
+    width:50%;
+}
+
+.input-field .fas{
+    margin-left: 0;
+}
+
+.input-field .prefix.active{
+    color: #FF8119;
+}
+
+p a{
+    color: #f56c00;
+}
 
 /* Media Queries */
 
 @media screen and (min-width: 750px){
+    .access-opts{
+        display: flex;
+    }
+
+    .access-opts p{
+        margin: 48px auto 15px;
+    }
+
     #title-margin{
     text-align: center;
     margin-bottom: 6%;
@@ -230,6 +310,9 @@ ul .list-style{
 }
 
 @media screen and (min-width: 1023px){
+    .ml-screen-margin{
+        margin-top: 21%;
+    }
     .article-text{
         display: grid;
         margin: 8% 3%;
@@ -237,6 +320,9 @@ ul .list-style{
 }
 
 @media screen and (min-width: 1028px){
+    .ml-screen-margin{
+        margin-top: -1%;
+    }
     .center-text{
         position: absolute;
         display: grid;
@@ -260,6 +346,10 @@ ul .list-style{
     .present-logo{
         width: 39%;
     }
+
+    .form-panel{
+    width:70%;
+}
 }
 
 @media screen and (max-width: 420px) {
@@ -284,6 +374,10 @@ ul .list-style{
     .present-logo{
         width: 80%;
     }
+    .form-panel{
+    width:90%;
+}
+
 
 }
 
