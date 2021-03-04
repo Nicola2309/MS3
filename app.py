@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from math import ceil
 if os.path.exists("env.py"):
     import env
 
@@ -16,6 +17,15 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+
+
+# Checking User Function
+def actual_user(username):
+    if "user" in session.keys():
+        if session["user"] == username:
+            return True
+
+    return False
 
 
 @app.route("/")
@@ -50,6 +60,7 @@ def register():
 
         register = {
             "username": request.form.get("username").lower(),
+            "email": request.form.get("email").lower(),
             "password": generate_password_hash(request.form.get("password")),
             "user_img": request.form.get("user_img")
         }
@@ -97,10 +108,35 @@ def profile(username):
     user = mongo.db.users.find_one(
         {"username": session["user"]})
 
-    if session["user"]:
-        return render_template("profile.html", user=user)
+    if not actual_user(username.lower()):
+        return redirect(url_for("login"))
 
-    return redirect(url_for("login"))
+    if "user" in session.keys():
+        if session["user"] == username:
+            recipes = list(
+                mongo.db.recipes.find({"created_by": username.lower()}))
+
+        # page number fetching
+        page = int(request.args.get('page') or 1)
+        num = 2
+
+        # count instances for pagination
+        count = ceil(float(len(recipes) / num))
+
+        # page -1 to check if the first items are found
+        start = (page - 1) * num
+        finish = start + num
+        show_recipes = recipes[start:finish]
+
+        return render_template(
+            "profile.html", user=user, recipes=show_recipes,
+            page=page, count=count, search=False)
+    else:
+        return redirect(url_for("login"))
+
+    return render_template(
+        "profile.html", user=user, recipes=recipes
+    )
 
 
 @app.route("/edit_profile/<username>", methods=["GET", "POST"])
