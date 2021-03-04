@@ -34,9 +34,21 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/get_recipes")
+@app.route("/get_recipes/")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
+
+    return render_template("recipes.html", recipes=recipes)
+
+
+@app.route('/search_recipes/<query>', methods=['GET', 'POST'])
+def search_recipes(query):
+
+    # search Recipes function
+    if search:
+        recipes = list(
+            mongo.db.recipes.find({"category_name": query}))
+
     return render_template("recipes.html", recipes=recipes)
 
 
@@ -140,19 +152,30 @@ def profile(username):
 
 
 @app.route("/edit_profile/<username>", methods=["GET", "POST"])
-def edit_profile(user):
+def edit_profile(username):
+
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+
+    if not actual_user(username.lower()):
+        return redirect(url_for("login"))
+
     # Update profile function
     if request.method == "POST":
-        user = mongo.db.users.find_one({"username": user.lower()})
         submit = {
             "username": user["username"],
             "password": user["password"],
-            "user_img": user("user_img"),
+            "user_img": user["user_img"],
         }
-        mongo.db.users.update({"_id": ObjectId(user)}, submit)
-        flash("Recipe Corrected")
+        mongo.db.users.update({"username": session["user"]}, submit)
+        flash("Profile Updated")
 
-    return render_template("profile.html", user=user)
+        return render_template("profile.html", user=user)
+
+    if "user" in session:
+        return render_template("edit_profile.html", user=user)
+
+    return redirect(url_for("login"))
 
 
 @app.route("/articles")
@@ -194,7 +217,7 @@ def add_recipe():
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Shared!")
-        return redirect(url_for("get_recipes"))
+        return redirect(url_for("get_recipes", search=""))
 
     return render_template("add_recipe.html")
 
@@ -208,6 +231,13 @@ def recipe(recipe_id):
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+
+    recipe_data = mongo.db.recipes.find_one(
+        {"_id": ObjectId(recipe_id)})
+
+    if not actual_user(recipe_data["created_by"]):
+        return redirect(url_for("login"))
+
     if request.method == "POST":
         submit = {
             "recipe_name": request.form.get("recipe_name"),
@@ -221,17 +251,31 @@ def edit_recipe(recipe_id):
             "created_by": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
-        flash("Recipe Improved")
+        flash("Recipe Improved!")
+
+        return redirect(url_for("get_recipes", search='', recipe_id=recipe_id))
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("edit_recipe.html", recipe=recipe)
+
+    # Check for the user to match in order to Edit the Recipe
+    if "user" in session.keys():
+        user = session["user"].lower()
+
+        if user == session["user"].lower():
+            return render_template("edit_recipe.html", recipe=recipe)
+
+        else:
+            return redirect(url_for("get_recipes", search=""))
+
+    else:
+        return redirect(url_for("login"))
 
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Deleted")
-    return redirect(url_for("get_recipes"))
+    return redirect(url_for("get_recipes", search=""))
 
 
 

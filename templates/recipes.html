@@ -18,12 +18,10 @@
     </div>
     <div class="row">
         <div class="col category-btns">
-            <a href="{{ url_for('search') }}" class="btn reset-btn">Breakfast</a>
-            <a href="{{ url_for('search') }}" class="btn reset-btn">Lunch</a>
-            <a href="{{ url_for('search') }}" class="btn reset-btn">Dinner</a>
-
+            <a href="{{ url_for('search_recipes', query='Breakfast') }}" class="btn reset-btn">Breakfast</a>
+            <a href="{{ url_for('search_recipes', query='Lunch') }}" class="btn reset-btn">Lunch</a>
+            <a href="{{ url_for('search_recipes', query='Dinner') }}" class="btn reset-btn">Dinner</a>
         </div>
-    
 </div>
 
 
