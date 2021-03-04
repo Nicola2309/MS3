@@ -23,7 +23,7 @@ body{
 }
 
 hr{
-    width: 90%;
+    width: 75%;
 }
 
 .section-margin{
@@ -31,12 +31,28 @@ hr{
 }
 
 .flashes h4{
-    line-height: 2;
+    color: #00c900;
+    font-weight: 700;
 }
 
 .transparent{
     box-shadow: none;
     height: 125px;
+}
+
+.fas,
+.far{
+    margin-left: 12px;
+}
+
+.present-buttn{
+    width: 153px !important;
+    margin-top: 27px;
+    background-color: #00CB00;
+}
+
+.present-buttn:hover{
+    background-color: #009900;
 }
 
 
@@ -73,13 +89,13 @@ ul .nav-link a{
 
 .page-indicator{
     margin-top: 100px;
-    margin-bottom: 9px;
+    margin-bottom: 30px;
     color: #FF8119;
     text-align: center;
 }
 
 
-/*  Hero-Image, Landing Page Styling  */
+/*  Hero-Image Styling  */
 .hero-img{
     z-index: -1;
     position: relative;
@@ -111,26 +127,11 @@ i.medium{
     font-size: 2.5em!important;
 }
 
-.fas,
-.far{
-    margin-left: 12px;
-}
-
-.present-buttn{
-    width: 153px !important;
-    margin-top: 27px;
-    background-color: #00CB00;
-}
-
-.present-buttn:hover{
-    background-color: #009900;
-}
-
 .btn-wrapper {
     position: relative !important;
 }
 
-/*  Mission Section Styling  */
+/*  Mission Section Styling. Homepage  */
 
 .head-text{
     margin: 30px 10px;    
@@ -192,7 +193,7 @@ ul .list-style{
 }
 
 .search-recipe{
-    width: 90%;
+    width: 75%;
     margin: 0 auto;
 }
 
@@ -226,7 +227,7 @@ ul .list-style{
 }
 
 
-/* Recipe Cards Style */
+/* Recipes Page */
 .card-image img{
     height: 180px;
     object-fit: cover;
@@ -242,6 +243,10 @@ ul .list-style{
 }
 
 .card-content{
+    text-align: center;
+}
+
+.modal-content h6{
     text-align: center;
 }
 
@@ -289,6 +294,52 @@ ul .list-style{
 p a{
     color: #f56c00;
 }
+
+/* Profile Page */
+
+.card.shadow{
+    width: 70%;
+    margin:auto;
+}
+
+.profile-background{
+    background-color: #76ff03;
+    text-align: center;
+}
+
+.profile-pic{
+    width:60% ;
+    object-fit: cover;
+    margin: 50px auto;
+    border-radius: 30% 10%;
+}
+
+.col .modal-trigger,
+.col .edit-btn{
+    width: 81px;
+    margin: 12px;
+}
+
+.modal-trigger{
+    background-color: #db0202;
+}
+
+.modal-trigger:hover{
+    background-color: #a30407;
+}
+
+.edit-btn{
+    background-color: #00CB00;
+}
+
+.modal-close.del{
+    background-color: #db0202;
+}
+
+.modal-close.back{
+    background-color: #faac1b;
+}
+
 
 /* Media Queries */
 
@@ -340,6 +391,10 @@ p a{
     ul .list-style{
     margin: 8% 42px auto 21px !important;
     }
+
+    .card.shadow{
+        width: 40%;
+    }
 }
 
 @media screen and (max-width: 770px){
@@ -371,13 +426,21 @@ p a{
         display: none;
     }
 
-    .present-logo{
+    .present-logo{  
         width: 80%;
     }
+
     .form-panel{
-    width:90%;
+    width:80%;
 }
 
+    .card.shadow{
+        width: 80%;
+    }
+
+    .profile-pic {
+    width: 90%;
+    }
 
 }
 
