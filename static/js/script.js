@@ -33,24 +33,6 @@ $(window).scroll(function(){
 
  window.addEventListener('scroll', scrollAppear);*/
 
-  const textElement = $('.text-1-slide-init');
-const sectionElement = $('.desk-width');
-
-function test() {
-        textElement.css({
-            'opacity': '1',
-            'transform': 'translateY(-15px)'
-        });
-} 
-
-// $(window).scroll(function(){
-//     test();
-// }); 
-
-sectionElement.mouseenter(function(){
-    test();
-}) ;
-
 
 //Source code https://www.taniarascia.com/smooth-scroll-to-id-with-jquery/
 $('a[href*="#"]').on('click', function (e) {
