@@ -13,7 +13,7 @@
     </div>
     <div class="row">
         <div class="col s12">
-            <h5 class="center-align"> {{ user.username }} Chef Profile</h5>
+            <h5 class="center-align"> {{ user.username.title() }} Chef Profile</h5>
         </div>
     </div>
     <div class="row">
@@ -39,77 +39,93 @@
 
 <!-- Recipes from the Profile-->
 <div class="row">
-    <div class="col s4">
-        <h3>Shared Recipes</h3>
+    <!-- Add a new Recipe-->
+    <div class="col s12 m4 l4">
+        <h3>Add a New One</h3>
+        <a href="{{ url_for('add_recipe') }}" class="btn add-buttn"> Share</a>
     </div>
-</div>
-<div class="row">
-     {% for recipe in recipes %}
-            <div class="col s4">
-                <div class="card">
+    <div class="col s12 m8 l8">
+        <h3>Shared Recipes</h3>
+        <div class="row">
+            {% for recipe in recipes %}
+            <div>
+                <div class="card" style="display:inline-block; max-width: 45%;">
                     <div class="card-image">
-                        <img src="{{ recipe.recipe_image }}" onerror="this.onerror=null;this.src='../static/images/dough-maker.jpg';" alt="{{ recipe.recipe_name }}">
+                        <img src="{{ recipe.recipe_image }}"
+                            onerror="this.onerror=null;this.src='../static/images/dough-maker.jpg';"
+                            alt="{{ recipe.recipe_name }}">
                     </div>
-                        <div class="card-content">
-                            <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
-                                <h5 class="recipe-name">{{ recipe.recipe_name }}</h5>
-                            </a>
-                            <h6>{{ recipe.category_name }}</h6>
+                    <div class="card-content">
+                        <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
+                            <h5 class="recipe-name">{{ recipe.recipe_name }}</h5>
+                        </a>
+                        <h6>{{ recipe.category_name }}</h6>
+                    </div>
+                    <div class="row">
+
+                        <!-- Access Recipe Function-->
+                        <div class="card-action">
+                            <a id="read-more" href="{{ url_for('recipe', recipe_id=recipe._id) }}">Read More...</a>
                         </div>
-                        <div class="row">
-    
-                            <!-- Access Recipe Function-->
-                            <div class="card-action">
-                                <a id="read-more" href="{{ url_for('recipe', recipe_id=recipe._id) }}">Read More...</a>
-                            </div>
-    
-                            <!--Edit/Delete Recipe Functions -->
-                            <div class="card-action">
-                                {% if session.user == 'admin' or session.user|lower == recipe.created_by|lower %}
-    
-                                <a href="#modal-question" 
-                                    class="modal-trigger">Delete</a>
-                                
-                                <div class="modal" id="modal-">
-                                    
-                                        <i class="fas fa-exclamation-circle red-text text-darken-3"></i>
-                                        <p>
-                                            Do you want to Delete this recipe?
-                                        </p>
-                                    
-                                    <div>
-                                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small modal-close"> Delete</a>
-                                        <a class="btn-small modal-close">Cancel</a>
-                                    </div>
+
+                        <!--Edit/Delete Recipe Functions -->
+                        <div class="card-action">
+                            {% if session.user == 'admin' or session.user|lower == recipe.created_by|lower %}
+
+                            <a href="#modal-question" class="modal-trigger btn del">Delete</a>
+
+                            <div class="modal" id="modal-">
+
+                                <i class="fas fa-exclamation-circle red-text text-darken-3"></i>
+                                <p>
+                                    Do you want to Delete this recipe?
+                                </p>
+
+                                <div>
+                                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
+                                        class="btn-small modal-close"> Delete</a>
+                                    <a class="btn-small modal-close">Cancel</a>
                                 </div>
-    
-                                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a>
-                                {% endif %}
                             </div>
+
+                            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="edit-btn btn">Edit</a>
+                            {% endif %}
                         </div>
+                    </div>
                 </div>
             </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
 
-    <!-- Pagination inspired by the fellow student code https://github.com/AudreyLL88/MS3__Sante/blob/master/templates/profile.html and this Flask Tutorial Blog https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination -->
+<!-- Pagination inspired by the fellow student code https://github.com/AudreyLL88/MS3__Sante/blob/master/templates/profile.html and this Flask Tutorial Blog https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination -->
+
         {% if search == False %}
-                    <div class="row">
-                         <ul class="pagination page">
-                             {% for i in range(0, count) %}
-                                <li class="disabled"><a href="{{ url_for('profile', username=user.username, page=i-1) }}"><i class="material-icons">chevron_left</i></a></li>
-                                {% if i+1 == page %}
-                                <li class="active"><a href="#">
-                                {% else %}
-                                <li class="waves-effect"><a href="{{ url_for('profile', username=user.username, page=i+1) }}">
-                                {% endif %}
-                                {{ i + 1  }}
-                                </a></li>
-                                <li class="waves-effect"><a href="{{ url_for('profile', username=user.username, page=i+1) }}"><i class="material-icons">chevron_right</i></a></li>
-                                {% endfor %}
-                        </ul>   
-                    </div>
-                {% endif %}
+        <div class="row">
+            <div class="col s12 m8 l8 center-align">
+                <ul class="pagination page">
+                    {% for i in range(0, count) %}
+                    <!-- <li class="disabled"><a href="{{ url_for('profile', username=user.username, page=i-1) }}"><i class="material-icons">chevron_left</i></a></li>-->
+                    {% if i+1 == page %}
+                    <li class="active"><a href="#">
+                            {% else %}
+                    <li class="waves-effect"><a href="{{ url_for('profile', username=user.username, page=i+1) }}">
+                            {% endif %}
+                            {{ i + 1  }}
+                        </a></li>
+                    <!--<li class="waves-effect"><a href="{{ url_for('profile', username=user.username, page=i+1) }}"><i class="material-icons">chevron_right</i></a></li>-->
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+    </div>
 </div>
+
+
+
+
+
+
 
 
 
