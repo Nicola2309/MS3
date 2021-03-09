@@ -21,18 +21,12 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="far fa-folder-open prefix"></i>
-                    <select id="category_name" name="category_name" class="form-control validate" required>
-                        <option value="" selected disabled>Select Category</option>
-                        <!--jinja loop to pull category names from DB-->
-                        {% for category in categories %}
-                        <!--checks to see which category name is in the DB and displays it on the DOM-->
-                        {% if category.category_name == recipe.category_name %}
-                        <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-                        {% else %}
-                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                        {% endif %}
-                        {% endfor %}
-                    </select>
+                    <select name="category_name" id="category_name" class="form-control validate" required>
+                                <option value="" selected disabled>{{ recipe.category_name }}</option>
+                                <option>Breakfast</option>
+                                <option>Lunch</option>
+                                <option>Dinner</option>
+                            </select>
                     </div>
                 </div>
 
@@ -77,6 +71,15 @@
                             </select>
                     </div>
                 </div>
+
+                <!-- Servings quantity -->                
+                <div class="row">
+                    <div class="input-field col s12">
+                            <i class="fas fa-mitten prefix"></i>
+                            <label for="servings">Number of Servings</label>
+                            <input type="text" value="{{ recipe.servings }}" class="form-control validate" name="servings" id="servings"
+                                aria-describedby="servings" required>
+                    </div>
             
                 <!-- Prep time -->
                 <div class="row">
@@ -92,35 +95,37 @@
                 <div class="row">
                     <div class="input-field col s12 ingr-input">
                             <i class="far fa-list-alt prefix"></i>
+                            {% for ingredient in recipe.ingredients %}
+                            <input id="ingredients" name="ingredients" type="text" aria-describedby="ingredients" minlength="3" value="{{ ingredient }}"
+                        class="validate" required>
+                            {% endfor %}
                             
-                            <input type="text" class="form-control validate" name="ingredients" id="ingredients"
-                            aria-describedby="ingredients" value="{{ recipe.ingredients }}" minlength="3" required>
                             
                     </div>
                 </div>
 
                 <!--Add Next Ingredient button-->
-            <div class="row">
+            <div class="row rem-height">
                 <div class="input-field col s1">
-                    <i class="fas fa-plus"><a href="#" class="add-ing-buttn prefix">
-                        <i class="fas fa-plus"></i>
-                </a></i>
+                    <a href="#" class=" prefix">
+                        <i class="fas fa-plus add-ingr-buttn"></i>
+                    </a>
                 </div>
             </div>
                 
                 <!-- Preparation -->
-                <div class="row">
+                <div class="row step-input">
                     <div class="input-field col s12">
-                            <i class="far fa-list-alt prefix"></i>
-                            
-                            <input type="text" class="form-control validate" name="preparation" value="{{ recipe.ingredients }}" id="preparation"
-                            aria-describedby="preparation" required>
-                            
+                    <i class="far fa-list-alt prefix"></i>
+                    <!--jinja for loop to display every method entry in array-->
+                    {% for step in recipe.preparation %}
+                    <textarea id="preparation" name="preparation" type="text" class="form-control validate" aria-describedby="preparation" required>{{ step }}</textarea>
+                    {% endfor %}
                     </div>
                 </div>
 
                 <!--Add Preparation Step button-->
-            <div class="row">
+            <div class="row rem-height">
                 <div class="input-field col s1">
                     <a href="#" class="add-step-buttn prefix">
                         <i class="fas fa-plus"></i>

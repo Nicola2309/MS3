@@ -209,10 +209,12 @@ def add_recipe():
             "category_name": request.form.get("category_name"),
             "prep_time": request.form.get("prep_time"),
             "difficulty": request.form.get("difficulty"),
+            "servings": request.form.get("servings"),
             "description": request.form.get("description"),
-            "ingredients": request.form.get("ingredients"),
-            "preparation": request.form.get("preparation"),
+            "ingredients": request.form.getlist("ingredients"),
+            "preparation": request.form.getlist("preparation"),
             "recipe_image": request.form.get("recipe_image"),
+            "image_source": request.form.get("image_source"),
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
@@ -244,10 +246,12 @@ def edit_recipe(recipe_id):
             "category_name": request.form.get("category_name"),
             "prep_time": request.form.get("prep_time"),
             "difficulty": request.form.get("difficulty"),
+            "servings": request.form.get("servings"),
             "description": request.form.get("description"),
-            "ingredients": request.form.get("ingredients"),
-            "preparation": request.form.get("preparation"),
+            "ingredients": request.form.getlist("ingredients"),
+            "preparation": request.form.getlist("preparation"),
             "recipe_image": request.form.get("recipe_image"),
+            "image_source": request.form.get("image_source"),
             "created_by": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)

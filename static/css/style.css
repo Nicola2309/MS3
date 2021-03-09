@@ -178,7 +178,7 @@ i.medium{
 }
 
 .icon-tainer{
-    width: 95%;
+    width: 90%;
     margin: 10px auto;
 }
 
@@ -201,8 +201,9 @@ ul .list-style{
     list-style-type: disc!important;
 }
 
-/*  SearchBar Styling and Recipe Page  */
+/*  SearchBar Styling and Recipes Page  */
 .input-field{
+    max-width: 90%;
     margin: 0 auto;
 }
 
@@ -296,6 +297,7 @@ ul .list-style{
     color: #ffae00;
 }
 
+
 /*---- form Add/Edit Recipe ----*/
 
 .edit-card{
@@ -304,6 +306,10 @@ ul .list-style{
     padding-left: 42px;
     width: 80%;
     margin: auto;
+}
+
+.rem-height{
+    height: 2.2rem;
 }
 
 .form-width{
@@ -323,7 +329,7 @@ ul .list-style{
 
 .input-field .fas,
 .input-field .far{
-    margin-left: 0;
+    margin-left: -2px;
 }
 
 .input-field .prefix.active{
@@ -421,6 +427,15 @@ p a{
 .btn-cancel{
     margin-top: 27px;
     margin-left: 21px;
+}
+
+/* Articles Page */
+.article-link{
+    color: #FF8119;
+}
+
+.article-link:hover{
+    color: gold;
 }
 
 
@@ -616,6 +631,10 @@ p a{
 
     .edit-card .prefix{
         font-size: 1.5rem;
+    }
+
+    rem-height{
+        height: 1.8rem;
     }
 
 }
