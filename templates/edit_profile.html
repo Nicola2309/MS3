@@ -10,6 +10,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-user-plus prefix accent-1-text text-lighten-4"></i>
+                    
                     <input id="username" name="username" type="text" minlength="3" maxlength="15" placeholder="Username"
                         pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                 </div>
@@ -36,7 +37,7 @@
                     <button type="submit" class="btn present-buttn">
                         Save Changes
                     </button>
-                    <a href="{{ url_for('profile', username=user.username|lower) }}" class="back btn btn-prof" >Cancel</a>
+                    <a href="{{ url_for('profile', username=user.username|lower) }}" class="back btn btn-cancel" >Cancel</a>
                 </div>
             </div>
         </div>

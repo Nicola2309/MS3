@@ -130,7 +130,7 @@ def profile(username):
 
         # page number fetching
         page = int(request.args.get('page') or 1)
-        num = 2
+        num = 6
 
         # count instances for pagination
         count = ceil(float(len(recipes) / num))
@@ -217,7 +217,7 @@ def add_recipe():
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Shared!")
-        return redirect(url_for("get_recipes", search=""))
+        return redirect(url_for("get_recipes"))
 
     return render_template("add_recipe.html")
 
@@ -253,7 +253,7 @@ def edit_recipe(recipe_id):
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Improved!")
 
-        return redirect(url_for("get_recipes", search='', recipe_id=recipe_id))
+        return redirect(url_for("get_recipes", recipe_id=recipe_id))
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
 
@@ -265,7 +265,7 @@ def edit_recipe(recipe_id):
             return render_template("edit_recipe.html", recipe=recipe)
 
         else:
-            return redirect(url_for("get_recipes", search=""))
+            return redirect(url_for("get_recipes"))
 
     else:
         return redirect(url_for("login"))
@@ -275,9 +275,7 @@ def edit_recipe(recipe_id):
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Deleted")
-    return redirect(url_for("get_recipes", search=""))
-
-
+    return redirect(url_for("get_recipes"))
 
 
 if __name__ == "__main__":
