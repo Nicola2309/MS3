@@ -26,6 +26,10 @@ hr{
     width: 75%;
 }
 
+.hr-mb{
+    margin-bottom: 18%;
+}
+
 .section-margin{
     margin-top: 72px;
 }
@@ -45,6 +49,10 @@ hr{
     margin-left: 12px;
 }
 
+.center-btn{
+        text-align: center;
+}
+
 .present-buttn{
     width: 153px !important;
     margin-top: 27px;
@@ -56,7 +64,7 @@ hr{
 }
 
 .present-buttn.btn:focus{
-    background-color: #00CB00;
+    background-color: #00CB00!important;
 }
 
 
@@ -117,6 +125,7 @@ ul .nav-link a{
     right: 60px;
     position: absolute;
     top: 30%;
+    background-color: rgb(248, 248, 248, 0.81);
 }
 
 .present h3{
@@ -152,8 +161,31 @@ i.medium{
     margin: 0 auto;
 }
 
-#h-plate{
-    width: 100%;
+#h-plate,
+#copyright-margin{
+    width: 81%;
+}
+
+#copyright-margin{
+    margin: 12px auto;
+}
+
+.article-text h5{
+    width: 81%;
+    line-height: 1.5;
+    text-align: center;
+    margin: 6% auto 0 auto;
+}
+
+.icon-tainer{
+    width: 95%;
+    margin: 10px auto;
+}
+
+.icon-tainer i{
+    font-size: 23px;
+    margin: auto;
+    color: #FF8119;
 }
 
 .carousel{
@@ -169,7 +201,7 @@ ul .list-style{
     list-style-type: disc!important;
 }
 
-/*  SearchBar CSS  */
+/*  SearchBar Styling and Recipe Page  */
 .input-field{
     margin: 0 auto;
 }
@@ -189,16 +221,26 @@ ul .list-style{
     background-color: #00FB00;
 }
 
+.search-btn:hover{
+    background-color: #04af04 ;
+}
+
 .reset-btn{
     margin: 5px;
     background-color: #FF8527;
 }
+
+.reset-btn:hover{
+    background-color: #c25502;
+}
+
 
 .category-btns{
     width: 100%;
     margin: 20px auto;
     text-align: center;
 }
+
 
 .category-btns a{
     color: rgb(48, 46, 46);
@@ -208,20 +250,31 @@ ul .list-style{
     width: 111px;
 }
 
+.category-btns a:hover{
+    background-color: #00FB00;
+}
 
-/* Recipes Page */
+
 .card-image img{
+    margin-top: 10px;
     height: 180px;
     object-fit: cover;
     width: 100%;
 }
 
-.card-action{
-    display: inline-block;
+.card .card-action{
+    margin-top: 24px;
+    padding: 9px 24px;
 }
-.card-action #read-more{
+
+#read-more{
+    margin: auto;
     color: #FF8527;
     font-weight: bold;
+}
+
+#read-more:hover{
+    color: gold;
 }
 
 .card-content{
@@ -232,32 +285,35 @@ ul .list-style{
     text-align: center;
 }
 
+/*---- form Single Recipe Page ----*/
+.recipe-img{
+    max-width: 100%;
+}
+
+.recipe-card-icon{
+    margin-right: 9px;
+    font-size: 1.4rem;
+    color: #ffae00;
+}
+
 /*---- form Add/Edit Recipe ----*/
 
+.edit-card{
+    padding-top: 33px;
+    padding-right: 51px;
+    padding-left: 42px;
+    width: 80%;
+    margin: auto;
+}
+
 .form-width{
+    padding: 30px;
     width: 80%;
     margin: 21px auto;
 }
 
 
 
-/* Footer */
-
-.page-footer{
-    margin-top: 72px;
-    background-color: #00CB00;
-    position: sticky;
-    top: 100%;
-}
-
-.align{
-    text-align: center;
-}
-
-.social-icon{
-    font-size: 1.8em;
-    margin-right: 12px;
-}
 
 /*  Register Form */
 .form-panel{
@@ -265,7 +321,8 @@ ul .list-style{
     width:50%;
 }
 
-.input-field .fas{
+.input-field .fas,
+.input-field .far{
     margin-left: 0;
 }
 
@@ -279,26 +336,47 @@ p a{
 
 /* Profile Page */
 
+.card.m6{
+    width: 47%;
+    margin: 10px;
+}
+
 .card.shadow{
     width: 70%;
     margin:auto;
 }
 
 .profile-background{
-    background-color: rgba(255 , 203, 3, 0.27);
+    background-color: rgba(112, 255, 110, 0.25);
     text-align: center;
 }
 
 .profile-pic{
-    width:60% ;
+    width: 100% ;
     object-fit: cover;
     margin: 50px auto;
     border-radius: 30% 10%;
 }
 
 .add-buttn{
-    background-color: #00D0AD;
-    width: 81px;
+    margin-top: 18px;
+    color: rgb(48, 46, 46);
+    background-color: #fafafa;
+    font-size: 19px;
+    font-weight: bolder;
+    
+}
+
+.add-buttn:hover{
+    background-color: #00FB00;
+}
+
+.add-buttn:focus{
+    background-color: #00c900;
+}
+
+.recipe-btns a{
+    margin: 4px!important;
 }
 
 .col .modal-trigger,
@@ -340,15 +418,41 @@ p a{
 }
 
 /* Edit Profile */
-.btn-prof{
+.btn-cancel{
     margin-top: 27px;
     margin-left: 21px;
+}
+
+
+/* Footer */
+
+.page-footer{
+    margin-top: 72px;
+    background-color: #00CB00;
+    position: sticky;
+    top: 100%;
+}
+
+.align{
+    text-align: center;
+}
+
+.social-icon{
+    font-size: 1.8em;
+    margin-right: 12px;
 }
 
 
 /* Media Queries */
 
 @media screen and (min-width: 750px){
+    .hr-mt{
+        margin-top: 63px;;
+    }
+    .hr-mb{
+        margin-bottom: 87px;
+    }
+
     .access-opts{
         display: flex;
     }
@@ -357,22 +461,22 @@ p a{
         margin: 48px auto 15px;
     }
 
-    #title-margin{
+    .title-margin{
     text-align: center;
-    margin-bottom: 6%;
-    margin-top: 3%;
+    margin: 6% auto;
 }
     
 }
 
 @media screen and (min-width: 1023px){
+    .hide-on-med-and-down li a{
+        font-size: 21px!important;
+    }
+
     .ml-screen-margin{
         margin-top: 21%;
     }
-    .article-text{
-        display: grid;
-        margin: 8% 3%;
-    }
+
 }
 
 @media screen and (min-width: 1028px){
@@ -384,24 +488,20 @@ p a{
         display: grid;
         margin: 8% 15%;
     }
-    
-    .article-text{
-        display: grid;
-        margin: 8% 14%;
+    #h-plate,
+    #copyright-margin,
+    .article-text h5{
+        width: 50%;
     }
 
     ul h6{
         margin-top: 27px;
     }
 
-    #title-margin{
+    .title-margin{
+        margin: 3% auto;
         font-size: 2.28em;  
-    }      
-        
-    #l-screen-font h6,    
-    #l-screen-font li{
-         font-size: x-large;     
-        }
+    }
 
     .card.shadow{
         width: 40%;
@@ -410,15 +510,44 @@ p a{
 
 @media screen and (max-width: 770px){
     .present-logo{
-        width: 39%;
+        width: 33%;
+    }
+
+    .center-text p{
+        margin: 15px auto;
+        font-size: large;
+        text-align: center;
+        width:81%
+    }
+
+    .title-margin{
+        text-align: center;
+        margin: 6% auto;
     }
 
     .form-panel{
     width:70%;
     }
 
-    .center-btn{
-        text-align: center;
+
+}
+
+@media screen and (max-width: 560px) {
+    .hr-mt{
+    margin-top: 18%;
+    }
+
+    .valign-wrapper{
+        display: block;
+    }
+
+    .icon-tainer{
+        margin: 21px auto;
+        width: 84%;
+    }
+
+    #next-ingr{
+        margin-left: 7%;
     }
 }
 
@@ -445,20 +574,48 @@ p a{
         width: 80%;
     }
 
+    .center-text p{
+        margin: 15px auto;
+        font-size: inherit;
+        text-align: center;
+        width:90%
+    }
+
+    #h-plate,
+    #copyright-margin,
+    .article-text h5{
+        width: 90%;
+    }
+
+    .article-text h5{
+
+        margin: 15% auto 0 auto;
+    }
+
+    .icon-tainer{
+        width: 90%;
+    }
+
     .form-panel{
-    width:80%;
-}
+        width:80%;
+    }
 
     .card.shadow{
         width: 80%;
     }
 
-    .profile-pic {
-    width: 90%;
+    .add-buttn{
+        font-size: 15px;
     }
 
-    .btn-prof{
-        margin-left: 0;
+    .edit-card{
+        width: 85%;
+        padding-right: 27px;
+        padding-left: 18px;
+    }
+
+    .edit-card .prefix{
+        font-size: 1.5rem;
     }
 
 }
