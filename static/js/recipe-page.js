@@ -9,7 +9,7 @@ $(document).ready(function() {
 	 	e.preventDefault();
 	 	if(ingr < max_ingr) { 
 	 		ingr++; 
-	 		$(wrapper_ingr).append('<div class="col s12 input-field" style="float: none;width: 78%;padding-left: 6%;"><input id="add_ingredients" type="text" name="add_ingredients" required/><label for="add_ingredients"></label><a href="#" class="remove_field"><i class="fas fa-trash-alt"></i></a></div>');
+	 		$(wrapper_ingr).append('<div class="col s12 input-field" style="float: none;width: 78%;padding-left: 6%;"><input id="ingredients" type="text" name="ingredients"/><label for="ingredients"></label><a href="#" class="remove_field"><i class="fas fa-trash-alt"></i></a></div>');
 	 	}
      });
 
@@ -27,7 +27,7 @@ $(document).ready(function() {
 		e.preventDefault();
 		if(step < max_steps) {
 			step++; 
-			$(wrapper_step).append('<div class="input-field col s12" style="float: none;width: 78%;padding-left: 6%;"><textarea id="recipe_step" type="text" name="recipe_step"/></textarea><label for="recipe_step"></label><a href="#" class="remove_field"><i class="far fa-trash-alt"></i></a></div>'); 
+			$(wrapper_step).append('<div class="input-field col s12" style="float: none;width: 78%;padding-left: 6%;"><textarea id="preparation" type="text" name="preparation"/></textarea><label for="preparation"></label><a href="#" class="remove_field"><i class="far fa-trash-alt"></i></a></div>'); 
 		}
 	});
 	

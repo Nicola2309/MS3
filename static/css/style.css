@@ -1,78 +1,83 @@
-html{
+html {
     height: 100%;
     min-height: 100%;
 }
 
-body{
+body {
     overflow-x: hidden;
     margin: auto 0;
     height: 100vh;
 }
 
-.text-shadow{
+.text-shadow {
     text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.5)
 }
 
-.container{
+.container {
     padding: 0;
     width: 100%;
 }
 
-.row{
+.row {
     padding: 0;
 }
 
-hr{
+hr {
     width: 75%;
 }
 
-.hr-mb{
+.hr-mb {
     margin-bottom: 18%;
 }
 
-.section-margin{
+.section-margin {
     margin-top: 72px;
 }
 
-.flashes h4{
+.flashes h4 {
     color: #00c900;
     font-weight: 700;
 }
 
-.transparent{
+.transparent {
     box-shadow: none;
     height: 125px;
 }
 
 .fas,
-.far{
+.far {
     margin-left: 12px;
 }
 
-.center-btn{
-        text-align: center;
+.center-btn {
+    text-align: center;
 }
 
-.present-buttn{
+.present-buttn {
     width: 153px !important;
     margin-top: 27px;
     background-color: #00CB00;
 }
 
-.present-buttn:hover{
+.present-buttn:hover {
     background-color: #009900;
 }
 
-.present-buttn.btn:focus{
+.present-buttn.btn:focus {
     background-color: #00CB00!important;
 }
 
 
-/*  Navigation CSS  */
-#logo{
+/* -------  Navigation CSS -------  */
+
+#logo {
     margin-left: 12px;
     margin-top: 3px;
-    height: 123px;
+    height: 119px;
+}
+
+.hide-on-med-and-down {
+    height: 125px;
 }
 
 nav ul a {
@@ -82,7 +87,7 @@ nav ul a {
     color: #00CB00!important;
 }
 
-ul .nav-link a{
+ul .nav-link a {
     font-family: 'Lily Script One', cursive;
     font-size: 2em!important;
     color: #00CB00!important;
@@ -90,16 +95,16 @@ ul .nav-link a{
     text-align: center;
 }
 
-.navbar-scroll.scrolled{
+.navbar-scroll.scrolled {
     background-color: white!important;
-    transition: 0.3s ease-in ;
+    transition: 0.3s ease-in;
 }
 
-.fas.fa-bars{
+.fas.fa-bars {
     color: #00CB00;
 }
 
-.page-indicator{
+.page-indicator {
     margin-top: 100px;
     margin-bottom: 30px;
     color: #FF8119;
@@ -107,8 +112,9 @@ ul .nav-link a{
 }
 
 
-/*  Hero-Image Styling  */
-.hero-img{
+/* -------  Hero-Image Styling -------  */
+
+.hero-img {
     z-index: -1;
     position: relative;
     top: -125px;
@@ -120,23 +126,23 @@ ul .nav-link a{
     width: 100%;
 }
 
-.present{
-    color: #FF8119 ;
+.present {
+    color: #FF8119;
     right: 60px;
     position: absolute;
     top: 30%;
     background-color: rgb(248, 248, 248, 0.81);
 }
 
-.present h3{
+.present h3 {
     font-size: 3.5em;
 }
 
-.present h5{
+.present h5 {
     font-size: 2.3em;
 }
 
-i.medium{
+i.medium {
     font-size: 2.5em!important;
 }
 
@@ -144,106 +150,107 @@ i.medium{
     position: relative !important;
 }
 
-/*  Mission Section Styling. Homepage  */
 
-.head-text{
-    margin: 30px 10px;    
+/* -------  Mission Section Styling. Homepage -------  */
+
+.head-text {
+    margin: 30px 10px;
     color: #FF8119;
     text-align: center;
 }
 
-#green-hand{
+#green-hand {
     max-width: 100%;
 }
 
-.desk-width{
+.desk-width {
     width: 90%;
     margin: 0 auto;
 }
 
 #h-plate,
-#copyright-margin{
+#copyright-margin {
     width: 81%;
 }
 
-#copyright-margin{
+#copyright-margin {
     margin: 12px auto;
 }
 
-.article-text h5{
+.article-text h5 {
     width: 81%;
     line-height: 1.5;
     text-align: center;
     margin: 6% auto 0 auto;
 }
 
-.icon-tainer{
+.icon-tainer {
     width: 90%;
     margin: 10px auto;
 }
 
-.icon-tainer i{
+.icon-tainer i {
     font-size: 23px;
     margin: auto;
     color: #FF8119;
 }
 
-.carousel{
+.carousel {
     max-width: 100%;
 }
 
-.row .present-buttn{
+.row .present-buttn {
     margin: 42px auto 15px !important;
 }
 
-ul .list-style{
+ul .list-style {
     margin: auto 42px auto 21px;
     list-style-type: disc!important;
 }
 
-/*  SearchBar Styling and Recipes Page  */
-.input-field{
+
+/* -------  SearchBar Styling and Recipes Page -------  */
+
+.input-field {
     max-width: 90%;
     margin: 0 auto;
 }
 
-.search-recipe{
+.search-recipe {
     width: 75%;
     margin: 0 auto;
 }
 
-.fas.fa-search{
+.fas.fa-search {
     margin: auto;
     color: #00CB00!important;
 }
 
-.search-btn{
+.search-btn {
     margin: 5px;
     background-color: #00FB00;
 }
 
-.search-btn:hover{
-    background-color: #04af04 ;
+.search-btn:hover {
+    background-color: #04af04;
 }
 
-.reset-btn{
+.reset-btn {
     margin: 5px;
     background-color: #FF8527;
 }
 
-.reset-btn:hover{
+.reset-btn:hover {
     background-color: #c25502;
 }
 
-
-.category-btns{
+.category-btns {
     width: 100%;
     margin: 20px auto;
     text-align: center;
 }
 
-
-.category-btns a{
+.category-btns a {
     color: rgb(48, 46, 46);
     background-color: #fafafa;
     font-weight: bold;
@@ -251,56 +258,57 @@ ul .list-style{
     width: 111px;
 }
 
-.category-btns a:hover{
+.category-btns a:hover {
     background-color: #00FB00;
 }
 
-
-.card-image img{
+.card-image img {
     margin-top: 10px;
     height: 180px;
     object-fit: cover;
     width: 100%;
 }
 
-.card .card-action{
+.card .card-action {
     margin-top: 24px;
     padding: 9px 24px;
 }
 
-#read-more{
+#read-more {
     margin: auto;
     color: #FF8527;
     font-weight: bold;
 }
 
-#read-more:hover{
+#read-more:hover {
     color: gold;
 }
 
-.card-content{
+.card-content {
     text-align: center;
 }
 
-.modal-content h6{
+.modal-content h6 {
     text-align: center;
 }
 
-/*---- form Single Recipe Page ----*/
-.recipe-img{
+
+/* ------- form Single Recipe Page  ------- */
+
+.recipe-img {
     max-width: 100%;
 }
 
-.recipe-card-icon{
+.recipe-card-icon {
     margin-right: 9px;
     font-size: 1.4rem;
     color: #ffae00;
 }
 
 
-/*---- form Add/Edit Recipe ----*/
+/* ------- form Add/Edit Recipe ------- */
 
-.edit-card{
+.edit-card {
     padding-top: 33px;
     padding-right: 51px;
     padding-left: 42px;
@@ -308,377 +316,345 @@ ul .list-style{
     margin: auto;
 }
 
-.rem-height{
+.rem-height {
     height: 2.2rem;
 }
 
-.form-width{
+.form-width {
     padding: 30px;
     width: 80%;
     margin: 21px auto;
 }
 
 
+/* -------  Register Form ------- */
 
-
-/*  Register Form */
-.form-panel{
+.form-panel {
     margin: 3% auto;
-    width:50%;
+    width: 50%;
 }
 
 .input-field .fas,
-.input-field .far{
+.input-field .far {
     margin-left: -2px;
 }
 
-.input-field .prefix.active{
+.input-field .prefix.active {
     color: #FF8119;
 }
 
-p a{
+p a {
     color: #f56c00;
 }
 
-/* Profile Page */
 
-.card.m6{
+/* ------- Profile Page ------- */
+
+.card.m6 {
     width: 47%;
     margin: 10px;
 }
 
-.card.shadow{
+.card.shadow {
     width: 70%;
-    margin:auto;
+    margin: auto;
 }
 
-.profile-background{
+.profile-background {
     background-color: rgba(112, 255, 110, 0.25);
     text-align: center;
 }
 
-.profile-pic{
-    width: 100% ;
+.profile-pic {
+    width: 100%;
     object-fit: cover;
     margin: 50px auto;
     border-radius: 30% 10%;
 }
 
-.add-buttn{
+.add-buttn {
     margin-top: 18px;
     color: rgb(48, 46, 46);
     background-color: #fafafa;
     font-size: 19px;
     font-weight: bolder;
-    
 }
 
-.add-buttn:hover{
+.add-buttn:hover {
     background-color: #00FB00;
 }
 
-.add-buttn:focus{
+.add-buttn:focus {
     background-color: #00c900;
 }
 
-.recipe-btns a{
+.recipe-btns a {
     margin: 4px!important;
 }
 
 .col .modal-trigger,
-.col .edit-btn{
+.col .edit-btn {
     width: 81px;
     margin: 12px;
 }
 
-.modal-trigger{
+.modal-trigger {
     background-color: #db0202;
 }
 
-.modal-trigger:hover{
+.modal-trigger:hover {
     background-color: #a30407;
 }
 
-.edit-btn{
+.edit-btn {
     background-color: #00CB00;
 }
 
-.edit-btn:hover{
+.edit-btn:hover {
     background-color: #009900;
 }
 
-.modal-close.del{
+.modal-close.del {
     background-color: #db0202;
 }
 
-.del:hover{
+.del:hover {
     background-color: #920505;
 }
 
-.back{
+.back {
     background-color: #faac1b;
 }
 
-.back:hover{
+.back:hover {
     background-color: #d68b00;
 }
 
-/* Edit Profile */
-.btn-cancel{
+
+/* ------- Edit Profile ------- */
+
+.btn-cancel {
     margin-top: 27px;
     margin-left: 21px;
 }
 
-/* Articles Page */
-.articles-panel{
+
+/* ------- Articles Page ------- */
+
+.articles-panel {
     margin: auto;
     width: 80%;
 }
-.articles-panel img{
+
+.articles-panel img {
     margin: 30px auto;
     width: 100%;
 }
-.article-link a{
+
+.article-link a {
     color: #FF8119;
 }
 
-.article-link a:hover{
+.article-link a:hover {
     color: gold;
 }
 
 
-/* Footer */
+/* ------- Footer ------- */
 
-.page-footer{
+.page-footer {
     margin-top: 72px;
     background-color: #00CB00;
     position: sticky;
     top: 100%;
 }
 
-.align{
+.align {
     text-align: center;
 }
 
-.social-icon{
+.social-icon {
     font-size: 1.8em;
     margin-right: 12px;
 }
 
+.social-icon i:hover {
+    color: #006700;
+}
 
-/* Media Queries */
 
-@media screen and (min-width: 750px){
-    .hr-mt{
-        margin-top: 63px;;
+/* ------- Media Queries ------- */
+
+@media screen and (min-width: 750px) {
+    .hr-mt {
+        margin-top: 63px;
+        ;
     }
-    .hr-mb{
+    .hr-mb {
         margin-bottom: 87px;
     }
-
-    .access-opts{
+    .access-opts {
         display: flex;
     }
-
-    .access-opts p{
+    .access-opts p {
         margin: 48px auto 15px;
     }
-
-    .title-margin{
-    text-align: center;
-    margin: 6% auto;
-}
-    
+    .title-margin {
+        text-align: center;
+        margin: 6% auto;
+    }
 }
 
-@media screen and (min-width: 1023px){
-    .hide-on-med-and-down li a{
+@media screen and (min-width: 1023px) {
+    .hide-on-med-and-down li a {
         font-size: 21px!important;
     }
-
-    .ml-screen-margin{
+    .ml-screen-margin {
         margin-top: 21%;
     }
-
 }
 
-@media screen and (min-width: 1028px){
-    .ml-screen-margin{
+@media screen and (min-width: 1028px) {
+    .ml-screen-margin {
         margin-top: -1%;
     }
-
-    .center-text{
+    .center-text {
         display: grid;
         margin: 8% 15%;
     }
     #h-plate,
     #copyright-margin,
-    .article-text h5{
+    .article-text h5 {
         width: 50%;
     }
-
-    ul h6{
+    ul h6 {
         margin-top: 27px;
     }
-
-    .title-margin{
+    .title-margin {
         margin: 3% auto;
-        font-size: 2.28em;  
+        font-size: 2.28em;
     }
-
-    .card.shadow{
+    .card.shadow {
         width: 40%;
     }
-
     .article-link,
-    .xl-width{
+    .xl-width {
         margin: 12px auto;
         width: 87%;
     }
 }
 
-@media screen and (max-width: 770px){
-    .present-logo{
+@media screen and (max-width: 770px) {
+    .present-logo {
         width: 33%;
     }
-
-    .center-text p{
+    .center-text p {
         margin: 15px auto;
         font-size: large;
         text-align: center;
-        width:81%
+        width: 81%
     }
-
-    .title-margin{
+    .title-margin {
         text-align: center;
         margin: 6% auto;
     }
-
-    .form-panel{
-    width:70%;
+    .form-panel {
+        width: 70%;
     }
-
-
 }
 
 @media screen and (max-width: 560px) {
-    .hr-mt{
-    margin-top: 18%;
+    .hr-mt {
+        margin-top: 18%;
     }
-
-    .valign-wrapper{
+    .valign-wrapper {
         display: block;
     }
-
-    .icon-tainer{
+    .icon-tainer {
         margin: 21px auto;
         width: 84%;
     }
-
-    #next-ingr{
+    #next-ingr {
         margin-left: 7%;
     }
 }
 
 @media screen and (max-width: 420px) {
-    .transparent{
+    .transparent {
         height: 115px;
     }
-
-    #logo{
+    #logo {
         max-width: 170px;
         height: auto;
     }
-
-    .present{
+    .present {
         left: 201px;
         top: 22%;
     }
-
-    .present h5{
+    .present h5 {
         display: none;
     }
-
-    .present-logo{  
+    .present-logo {
         width: 80%;
     }
-
-    .center-text p{
+    .center-text p {
         margin: 15px auto;
         font-size: inherit;
         text-align: center;
-        width:90%
+        width: 90%
     }
-
     #h-plate,
     #copyright-margin,
-    .article-text h5{
+    .article-text h5 {
         width: 90%;
     }
-
-    .article-text h5{
-
+    .article-text h5 {
         margin: 15% auto 0 auto;
     }
-
-    .icon-tainer{
+    .icon-tainer {
         width: 90%;
     }
-
-    .form-panel{
-        width:80%;
-    }
-
-    .card.shadow{
+    .form-panel {
         width: 80%;
     }
-
-    .add-buttn{
+    .card.shadow {
+        width: 80%;
+    }
+    .add-buttn {
         font-size: 15px;
     }
-
-    .edit-card{
+    .edit-card {
         width: 85%;
         padding-right: 27px;
         padding-left: 18px;
     }
-
-    .edit-card .prefix{
+    .edit-card .prefix {
         font-size: 1.5rem;
     }
-
-    rem-height{
+    rem-height {
         height: 1.8rem;
     }
-
 }
 
-
 @media screen and (max-width: 360px) {
-    .transparent{
+    .transparent {
         height: 95px;
     }
-
-    #logo{
+    #logo {
         max-width: 126px;
         height: auto;
     }
-
-    .present{
+    .present {
         right: 1px!important;
         left: 150px;
     }
-
-    .present h3{
+    .present h3 {
         font-size: 3.2em;
     }
-
 }
 
-
 @media screen and (max-width: 280px) {
-    .present{
+    .present {
         left: 109px!important;
     }
-
 }

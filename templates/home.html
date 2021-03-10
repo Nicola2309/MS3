@@ -1,113 +1,118 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="hero-img">
-</div>
+<!-- Landing Page First Section -->
+<div class="hero-img"></div>
 <div class="present">
-        <h3>Prepare healthy days</h3>
-        <h5>Happy Body, Happy Planet</h5>
-        <div class="btn-wrapper">
-            <a href="#idea" id="smooth-scroll" class="waves-effect waves-light btn present-buttn">About us <i
-                    class="fas fa-chevron-down"></i></a>
-            <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn present-buttn">Recipes <i
-                    class="fas fa-chevron-right"></i></a>
-        </div>
-    </div>
+   <h3>Prepare healthy days</h3>
+   <h5>Happy Body, Happy Planet</h5>
+   <div class="btn-wrapper">
+      <a href="#idea" id="smooth-scroll" class="waves-effect waves-light btn present-buttn">About us <i
+         class="fas fa-chevron-down"></i></a>
+      <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn present-buttn">Recipes <i
+         class="fas fa-chevron-right"></i></a>
+   </div>
+</div>
 
-
+<!-- The Idea Section -->
 <hr id="idea" style="margin-top:-30px;">
 <h3  class="head-text"> The Idea Behind Our Cookbook</h3>
 <hr  class="hr-mb">
 
 <div class="row desk-width ">
-    <div class="col s12 m12">
-        <article style="text-align: center;">
-            <img class="present-logo hide-on-large-only" src="../static/images/logo2.png" alt="logo">
-        </article>
-    </div>
-    <div class="col s12 m12 l6">
-        <article class="center-text">
-            <p>This online recipe book found its purpose on the recently released Harvard Study on the perfect diet for
-                humans and the planet, the "Planetary Health Diet". </p>
-            <p> Founded on years of studies on food cultures
-                around the world it sums up the perfect proportion of Whole Grains, Vegetables and Healthy Proteins
-                which generally guarantee enormous benefits on the human body nutrition and health. </p>
-            <p>Interestingly, what
-                is generally the best for a healthy body is specularly the best for the use of the planet soil and sea
-                resources.
-                These clear results provide us with a higher-quality and food-richer future through a
-                simple tool, a plate!</p>
-        </article>
-    </div>
-    <div class="col s12 m12 l6">
-        <img id="green-hand" src="../static/images/sustain-eat.jpg" alt="plant on child hand">
-    </div>
+   <div class="col s12 m12">
+      <article style="text-align: center;">
+         <img class="present-logo hide-on-large-only" src="../static/images/logo2.png" alt="logo">
+      </article>
+   </div>
+   <div class="col s12 m12 l6">
+      <article class="center-text">
+         <p>This online recipe book found its purpose on the recently released Harvard Study on the perfect diet for
+            humans and the planet, the "Planetary Health Diet". 
+         </p>
+         <p> Founded on years of studies on food cultures
+            around the world it sums up the perfect proportion of Whole Grains, Vegetables and Healthy Proteins
+            which generally guarantee enormous benefits on the human body nutrition and health. 
+         </p>
+         <p>Interestingly, what
+            is generally the best for a healthy body is specularly the best for the use of the planet soil and sea
+            resources.
+            These clear results provide us with a higher-quality and food-richer future through a
+            simple tool, a plate!
+         </p>
+      </article>
+   </div>
+   <div class="col s12 m12 l6">
+      <img id="green-hand" src="../static/images/sustain-eat.jpg" alt="plant on child hand">
+   </div>
 </div>
 
-
+<!-- The Studies Section -->
 <hr class="hr-mt">
 <h3 class="head-text"> The Studies</h3>
 <hr class="hr-mb">
 
 <div class="row desk-width">
-    <div class="col s12">
-        <article class="center-align">
-            <img id="h-plate" src="../static/images/harvard-plate.jpg" alt="Healthy Eating Plate Concept">
-            <p id="copyright-margin">Copyright © 2011 Harvard University. For more information about The Healthy Eating Plate, please see The
-                Nutrition Source, Department of Nutrition, Harvard T.H. Chan School of Public Health,
-                http://www.thenutritionsource.org and Harvard Health Publications, health.harvard.edu.</p>
-        </article>
-        <article class="article-text">
-            <h5>If your <strong>Food Passion</strong> becomes <strong>"Nerdy"</strong> at times, embrace it in our articles section</h5>
-            <div class="row">
-                <div class="col s12 center-btn">
-                    <a href="{{ url_for('articles') }}" class="waves-effect waves-light btn present-buttn">Articles <i
-                            class="far fa-newspaper"></i></a>
-                </div>
+   <div class="col s12">
+      <article class="center-align">
+         <img id="h-plate" src="../static/images/harvard-plate.jpg" alt="Healthy Eating Plate Concept">
+         <p id="copyright-margin">Copyright © 2011 Harvard University. For more information about The Healthy Eating Plate, please see The
+            Nutrition Source, Department of Nutrition, Harvard T.H. Chan School of Public Health,
+            http://www.thenutritionsource.org and Harvard Health Publications, health.harvard.edu.
+         </p>
+      </article>
+      <article class="article-text">
+         <h5>If your <strong>Food Passion</strong> becomes <strong>"Nerdy"</strong> at times, embrace it in our articles section</h5>
+         <div class="row">
+            <div class="col s12 center-btn">
+               <a href="{{ url_for('articles') }}" class="waves-effect waves-light btn present-buttn">Articles <i
+                  class="far fa-newspaper"></i></a>
             </div>
-        </article>
-
-    </div>
+         </div>
+      </article>
+   </div>
 </div>
 
 
+<!-- Take Care Section-->
 <hr class="hr-mt">
 <h3 class="head-text"> Take Care</h3>
 <hr class="hr-mb">
 
 <div class="row desk-width">
-    <div class="col s12">
-        <h5 class="title-margin">Take care of your self and your loved ones </h5>
-    </div>
+   <div class="col s12">
+      <h5 class="title-margin">Take care of your self and your loved ones </h5>
+   </div>
 </div>
-    <div class="row desk-width valign-wrapper">
-        <div class="col s12 m6">
-        <ul class="center-align">
-            <p class="icon-tainer" style="font-size: 1.2rem;">Having a complete meal is the superpower of a productive day:</p>
-            <li class="icon-tainer">
-                <i class="fas fa-user-friends"></i><p>Make it become a stay-together activity with your family or inmates</p>
-            </li>
-            <li class="icon-tainer">
-                <i class="fas fa-utensils"></i><p>Help eachother prepare the meals decided for the upcoming days</p>
-            </li>
-            <li class="icon-tainer">
-                <i class="fas fa-clock"></i><p>Whole grains and veggies have a long cooking time which creates the opportunity for conversational time
-                    together or in a videocall</p>
-            </li>
-        </ul>
-        </div>
-        <div class="col s12 m6 center-align carousel carousel-slider">
-        <a class="carousel-item" href="#one!"><img src="../static/images/mo-daughter-help.jpg"></a>
-        <a class="carousel-item" href="#two!"><img src="../static/images/supervised-mixing.jpg"></a>
-        <a class="carousel-item" href="#three!"><img src="../static/images/cookie-tasting.jpg"></a>
-        <a class="carousel-item" href="#four!"><img src="../static/images/couple-cooking.jpg"></a>
-        <a class="carousel-item" href="#five!"><img src="../static/images/cooking-mom-supporters.jpg"></a>
-    </div>
-    </div>
+<div class="row desk-width valign-wrapper">
+   <div class="col s12 m6">
+      <ul class="center-align">
+         <p class="icon-tainer" style="font-size: 1.2rem;">Having a complete meal is the superpower of a productive day:</p>
+         <li class="icon-tainer">
+            <i class="fas fa-user-friends"></i>
+            <p>Make it become a stay-together activity with your family or inmates</p>
+         </li>
+         <li class="icon-tainer">
+            <i class="fas fa-utensils"></i>
+            <p>Help eachother prepare the meals decided for the upcoming days</p>
+         </li>
+         <li class="icon-tainer">
+            <i class="fas fa-clock"></i>
+            <p>Whole grains and veggies have a long cooking time which creates the opportunity for conversational time
+               together or in a videocall
+            </p>
+         </li>
+      </ul>
+   </div>
 
-
-
-
-
+   <!-- Carousel -->
+   <div class="col s12 m6 center-align carousel carousel-slider">
+      <a class="carousel-item" href="#one!"><img src="../static/images/mo-daughter-help.jpg"></a>
+      <a class="carousel-item" href="#two!"><img src="../static/images/supervised-mixing.jpg"></a>
+      <a class="carousel-item" href="#three!"><img src="../static/images/cookie-tasting.jpg"></a>
+      <a class="carousel-item" href="#four!"><img src="../static/images/couple-cooking.jpg"></a>
+      <a class="carousel-item" href="#five!"><img src="../static/images/cooking-mom-supporters.jpg"></a>
+   </div>
+</div>
 
 {% endblock %}
