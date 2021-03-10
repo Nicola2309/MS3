@@ -430,11 +430,19 @@ p a{
 }
 
 /* Articles Page */
-.article-link{
+.articles-panel{
+    margin: auto;
+    width: 80%;
+}
+.articles-panel img{
+    margin: 30px auto;
+    width: 100%;
+}
+.article-link a{
     color: #FF8119;
 }
 
-.article-link:hover{
+.article-link a:hover{
     color: gold;
 }
 
@@ -520,6 +528,12 @@ p a{
 
     .card.shadow{
         width: 40%;
+    }
+
+    .article-link,
+    .xl-width{
+        margin: 12px auto;
+        width: 87%;
     }
 }
 
