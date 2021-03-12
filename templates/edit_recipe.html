@@ -4,144 +4,158 @@
 <h3  class="page-indicator"> Edit Recipe </h3>
 <section>
    <div class="row">
-   <form class="form-width col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-      <div class="card-panel edit-card">
+      <form class="form-width col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+         <div class="card-panel edit-card">
 
-         <!-- Recipe Name -->
-         <div class="row">
-            <div class="input-field col s12">
-               <i class="far fa-dot-circle prefix"></i>
-               <input type="text" class="form-control validate" id="recipe_name" placeholder="Recipe Name"
-                  value="{{ recipe.recipe_name }}"
-                  name="recipe_name" aria-describedby="recipe_name" minlength="3" maxlength="25" required>
-            </div>
-         </div>
-
-         <!-- Category -->
-         <div class="row">
-            <div class="input-field col s12">
-               <i class="far fa-folder-open prefix"></i>
-               <select name="category_name" id="category_name" class="form-control validate" required>
-                  <option value="" selected disabled>{{ recipe.category_name }}</option>
-                  <option>Breakfast</option>
-                  <option>Lunch</option>
-                  <option>Dinner</option>
-               </select>
-            </div>
-         </div>
-
-         <!-- Brief Description -->
-         <div class="row">
-            <div class="input-field col s12">
-               <i class="fas fa-concierge-bell prefix"></i>
-               <label for="description">Brief Description</label>
-               <input type="text" value="{{ recipe.description }}" class="form-control validate" name="description" id="description" aria-describedby="description" maxlength="90" required>
-            </div>
-         </div>
-
-         <!-- Image URL -->
-         <div class="row">
-            <div class="input-field col s12">
-               <i class="fas fa-camera prefix"></i>
-               <label for="recipe_image">Image URL</label>
-               <input type="text" value="{{ recipe.recipe_image }}" class="form-control validate" name="recipe_image" 
-                  id="recipe_image" aria-describedby="recipe_image" required>
-            </div>
-         </div>
-
-         <!-- Image Source -->
-         <div class="row">
-            <div class="input-field col s12">
-               <i class="far fa-copyright prefix"></i>
-               <label for="image_source">Image Artist or Website</label>
-               <input type="text" value="{{ recipe.image_source }}" class="form-control validate" name="image_source" id="image_source"
-                  aria-describedby="image_source" required>
-            </div>
-         </div>
-
-         <!-- Difficulty -->
-         <div class="row">
-            <div class="input-field col s12">
-               <i class="fas fa-dumbbell prefix"></i>
-               <select  class="form-control validate" name="difficulty" id="difficulty" required>
-                  <option value="{{ recipe.difficulty }}" selected disabled>{{ recipe.difficulty }}</option>
-                  <option>Easy</option>
-                  <option>Medium</option>
-                  <option>Hard</option>
-               </select>
-            </div>
-         </div>
-
-         <!-- Servings quantity -->                
-         <div class="row">
-            <div class="input-field col s12">
-               <i class="fas fa-mitten prefix"></i>
-               <label for="servings">Number of Servings</label>
-               <input type="text" value="{{ recipe.servings }}" class="form-control validate" name="servings" id="servings"
-                  aria-describedby="servings" required>
-            </div>
-
-            <!-- Prep time -->
+            <!-- Recipe Name -->
             <div class="row">
                <div class="input-field col s12">
-                  <i class="far fa-clock prefix"></i>
-                  <label for="prep_time">Prep Time (HH:MM)</label>
-                  <input type="text" value="{{ recipe.prep_time }}" class="form-control validate" name="prep_time"
-                     id="prep_time" aria-describedby="prep_time" required>
+                  <i class="far fa-dot-circle prefix form-recipe-icon-margin-1"></i>
+                  <input type="text" class="form-control validate" id="recipe_name" placeholder="Recipe Name"
+                     value="{{ recipe.recipe_name }}"
+                     name="recipe_name" aria-describedby="recipe_name" minlength="3" maxlength="25" required>
                </div>
             </div>
 
-            <!-- Ingredients -->
+            <!-- Category -->
             <div class="row">
-               <div class="input-field col s12 ingr-input">
-                  <i class="far fa-list-alt prefix"></i>
+               <div class="input-field col s12">
+                  <i class="far fa-folder-open prefix form-recipe-icon-margin-1"></i>
+                  <select name="category_name" id="category_name" class="form-control validate" required>
+                     <option value="" selected disabled>{{ recipe.category_name }}</option>
+                     <option>Breakfast</option>
+                     <option>Lunch</option>
+                     <option>Dinner</option>
+                  </select>
+               </div>
+            </div>
+
+            <!-- Brief Description -->
+            <div class="row">
+               <div class="input-field col s12">
+                  <i class="fas fa-concierge-bell prefix form-recipe-icon-margin-1"></i>
+                  <label for="description">Brief Description</label>
+                  <input type="text" value="{{ recipe.description }}" class="form-control validate" name="description" id="description" aria-describedby="description" maxlength="90" required>
+               </div>
+            </div>
+
+            <!-- Image URL -->
+            <div class="row">
+               <div class="input-field col s12">
+                  <i class="fas fa-camera prefix form-recipe-icon-margin-1"></i>
+                  <label for="recipe_image">Image URL</label>
+                  <input type="text" value="{{ recipe.recipe_image }}" class="form-control validate" name="recipe_image" 
+                     id="recipe_image" aria-describedby="recipe_image" required>
+               </div>
+            </div>
+
+            <!-- Image Source -->
+            <div class="row">
+               <div class="input-field col s12">
+                  <i class="far fa-copyright prefix form-recipe-icon-margin-1"></i>
+                  <label for="image_source">Image Artist or Website</label>
+                  <input type="text" value="{{ recipe.image_source }}" class="form-control validate" name="image_source" id="image_source"
+                     aria-describedby="image_source" required>
+               </div>
+            </div>
+
+            <!-- Difficulty -->
+            <div class="row">
+               <div class="input-field col s12">
+                  <i class="fas fa-dumbbell prefix dumbbell-margin"></i>
+                  <select  class="form-control validate" name="difficulty" id="difficulty" required>
+                     <option value="{{ recipe.difficulty }}" selected disabled>{{ recipe.difficulty }}</option>
+                     <option>Easy</option>
+                     <option>Medium</option>
+                     <option>Hard</option>
+                  </select>
+               </div>
+            </div>
+
+            <!-- Servings quantity -->                
+            <div class="row">
+               <div class="input-field col s12">
+                  <i class="fas fa-mitten prefix form-recipe-icon-margin-2"></i>
+                  <label for="servings">Number of Servings</label>
+                  <input type="text" value="{{ recipe.servings }}" class="form-control validate" name="servings" id="servings"
+                     aria-describedby="servings" required>
+               </div>
+            </div>
+
+               <!-- Prep time -->
+               <div class="row">
+                  <div class="input-field col s12">
+                     <i class="far fa-clock prefix  form-recipe-icon-margin-2"></i>
+                     <label for="prep_time">Prep Time (HH:MM)</label>
+                     <input type="text" value="{{ recipe.prep_time }}" class="form-control validate" name="prep_time"
+                        id="prep_time" aria-describedby="prep_time" required>
+                  </div>
+               </div>
+
+               <!-- Ingredients -->
+               <div class="row edit-ingr-row">
                   {% for ingredient in recipe.ingredients %}
-                  <input id="ingredients" name="ingredients" type="text" aria-describedby="ingredients" minlength="3" value="{{ ingredient }}"
-                     class="validate" required>
+                  <div class="input-field col s12 ingr-input">
+                     <!-- This if loop prevents the icon repetition -->
+                     {% if loop.index == 1 %}
+                     <i class="far fa-list-alt prefix  form-recipe-icon-margin-2"></i>
+                     {% endif %}
+                     <input id="ingredients" name="ingredients" type="text" aria-describedby="ingredients" minlength="3" value="{{ ingredient }}"
+                        class="validate" required>
+                     <!-- This if loop prevents the deletion of
+                        the first ingredient row -->
+                     {% if loop.index != 1 %}
+                     <a href="#" class="remove_field"><i class="far fa-trash-alt"></i></a>
+                     {% endif %}
+                  </div>
                   {% endfor %}
                </div>
-            </div>
 
-            <!--Add Next Ingredient button-->
-            <div class="row rem-height">
-               <div class="input-field col s1">
-                  <a href="#" class=" prefix">
-                  <i class="fas fa-plus add-ingr-buttn"></i>
-                  </a>
+               <!--Add Next Ingredient button-->
+               <div class="row rem-height">
+                  <div class="input-field col s1">
+                     <a href="#" class=" prefix">
+                     <i class="fas fa-plus add-edit-ingr-buttn append-btn-margin-1"></i>
+                     </a>
+                  </div>
                </div>
-            </div>
 
-            <!-- Preparation -->
-            <div class="row step-input">
-               <div class="input-field col s12">
-                  <i class="far fa-list-alt prefix"></i>
-                  <!--jinja for loop to display every method entry in array-->
+               <!-- Preparation -->
+               <div class="row step-input edit-prep-row">
                   {% for step in recipe.preparation %}
-                  <textarea id="preparation" name="preparation" class="form-control validate" aria-describedby="preparation" required>{{ step }}</textarea>
+                  <div class="input-field col s12">
+                     <!-- This if loop prevents the icon repetition -->
+                     {% if loop.index == 1 %}
+                     <i class="far fa-list-alt prefix  form-recipe-icon-margin-2"></i>
+                     {% endif %}
+                     <textarea id="preparation" name="preparation" class="form-control validate" aria-describedby="preparation" required>{{ step }}</textarea>
+                     <!-- This if loop prevents the deletion of
+                        the first recipe step -->
+                     {% if loop.index != 1 %}
+                     <a href="#" class="remove_field"><i class="far fa-trash-alt"></i></a>
+                     {% endif %}
+                  </div>
                   {% endfor %}
                </div>
-            </div>
 
-            <!--Add Preparation Step button-->
-            <div class="row rem-height">
-               <div class="input-field col s1">
-                  <a href="#" class="add-step-buttn prefix">
-                  <i class="fas fa-plus"></i>
-                  </a>
+               <!--Add Preparation Step button-->
+               <div class="row rem-height">
+                  <div class="input-field col s1">
+                     <a href="#" class="add_edit_step_buttn prefix">
+                     <i class="fas fa-plus append-btn-margin-2"></i>
+                     </a>
+                  </div>
+               </div>
+
+               <!-- Save Changes/Cancel Buttons -->
+               <div class="row center-align">
+                  <div class="col s12">
+                     <button class="btn waves-effect waves-light present-buttn" type="submit" name="action">Save Changes</button>
+                     <a href="{{ url_for('get_recipes') }}" class="back  btn btn-cancel" >Cancel</a>
+                  </div>
                </div>
             </div>
-
-            <!-- Add/Cancel Buttons -->
-            <div class="row center-align">
-               <div class="col s12">
-                  <button class="btn waves-effect waves-light present-buttn" type="submit" name="action">Save Changes</button>
-                  <a href="{{ url_for('get_recipes') }}" class="back  btn btn-cancel" >Cancel</a>
-               </div>
-            </div>
-         </div>
-      </div>
-   </form>
+      </form>
    </div>
 </section>
-
 {% endblock %}

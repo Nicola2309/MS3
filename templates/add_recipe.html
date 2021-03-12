@@ -11,7 +11,7 @@
             <!-- Recipe Name -->
             <div class="row">
                <div class="input-field col s12">
-                  <i class="far fa-dot-circle prefix"></i>
+                  <i class="far fa-dot-circle prefix form-recipe-icon-margin-1"></i>
                   <input type="text" class="form-control validate" id="recipe_name" placeholder="Recipe Name"
                      name="recipe_name" aria-describedby="recipe_name" minlength="3" maxlength="25" required>
                </div>
@@ -20,7 +20,7 @@
             <!-- Select Category -->
             <div class="row">
                <div class="input-field col s12">
-                  <i class="far fa-folder-open prefix"></i>
+                  <i class="far fa-folder-open prefix form-recipe-icon-margin-1"></i>
                   <select name="category_name" id="category_name" class="form-control validate" required>
                      <option value="" selected disabled>Select Category</option>
                      <option>Breakfast</option>
@@ -33,7 +33,7 @@
             <!-- Brief Description -->
             <div class="row">
                <div class="input-field col s12">
-                  <i class="fas fa-concierge-bell prefix"></i>
+                  <i class="fas fa-concierge-bell prefix form-recipe-icon-margin-1"></i>
                   <label for="description">Brief Description</label>
                   <input type="text" class="form-control validate" name="description" id="description" aria-describedby="description" maxlength="90" required>
                </div>
@@ -42,7 +42,7 @@
             <!-- Image URL -->
             <div class="row">
                <div class="input-field col s12">
-                  <i class="fas fa-camera prefix"></i>
+                  <i class="fas fa-camera prefix form-recipe-icon-margin-1"></i>
                   <label for="recipe_image">Image URL</label>
                   <input type="text" class="form-control validate" name="recipe_image" 
                      id="recipe_image" aria-describedby="recipe_image" required>
@@ -52,7 +52,7 @@
             <!-- Image Source -->
             <div class="row">
                <div class="input-field col s12">
-                  <i class="far fa-copyright prefix"></i>
+                  <i class="far fa-copyright prefix form-recipe-icon-margin-1"></i>
                   <label for="image_source"> Artist or Website</label>
                   <input type="text" class="form-control validate" name="image_source" id="image_source"
                      aria-describedby="image_source" required>
@@ -62,7 +62,7 @@
             <!-- Difficulty -->
             <div class="row">
                <div class="input-field col s12">
-                  <i class="fas fa-dumbbell prefix"></i>
+                  <i class="fas fa-dumbbell prefix dumbbell-margin"></i>
                   <select  class="form-control validate" name="difficulty" id="difficulty" required>
                      <option value="" selected disabled>Select Level</option>
                      <option>Easy</option>
@@ -75,7 +75,7 @@
             <!-- Servings quantity -->                
             <div class="row">
                <div class="input-field col s12">
-                  <i class="fas fa-mitten prefix"></i>
+                  <i class="fas fa-mitten prefix form-recipe-icon-margin-2"></i>
                   <label for="servings">Number of Servings</label>
                   <input type="text" class="form-control validate" name="servings" id="servings"
                      aria-describedby="servings" required>
@@ -85,7 +85,7 @@
             <!-- Prep time -->
             <div class="row">
                <div class="input-field col s12">
-                  <i class="far fa-clock prefix"></i>
+                  <i class="far fa-clock prefix form-recipe-icon-margin-2"></i>
                   <label for="prep_time">Prep Time (HH:MM)</label>
                   <input type="text" class="form-control validate" name="prep_time"
                      id="prep_time" aria-describedby="prep_time" required>
@@ -93,28 +93,28 @@
             </div>
 
             <!-- Ingredients -->
-            <div class="row">
+            <div class="row ingredient-row">
                <div class="input-field col s12 ingr-input">
-                  <i class="far fa-list-alt prefix"></i>
+                  <i class="far fa-list-alt prefix form-recipe-icon-margin-2"></i>
                   <label for="ingredients">Ingredients</label>
                   <input type="text" class="form-control validate" name="ingredients" id="ingredients"
                      aria-describedby="ingredients" minlength="3" required>
                </div>
             </div>
 
-            <!--Add Next Ingredient button-->
+            <!--Add Ingredient button-->
             <div class="row rem-height">
                <div class="input-field col s1">
                   <a href="#" class=" prefix">
-                  <i class="fas fa-plus add-ingr-buttn"></i>
+                  <i class="fas fa-plus add-ingr-buttn append-btn-margin-1"></i>
                   </a>
                </div>
             </div>
 
             <!-- Preparation -->
-            <div class="row">
+            <div class="row prep-row">
                <div class="input-field col s12 step-input">
-                  <i class="far fa-list-alt prefix"></i>
+                  <i class="far fa-list-alt prefix form-recipe-icon-margin-2"></i>
                   <label for="preparation">Preparation</label>
                   <input type="text" class="form-control validate" name="preparation" id="preparation"
                      aria-describedby="preparation" required>
@@ -125,12 +125,12 @@
             <div class="row rem-height">
                <div class="input-field col s1">
                   <a href="#" class="add-step-buttn prefix">
-                  <i class="fas fa-plus"></i>
+                  <i class="fas fa-plus append-btn-margin-2"></i>
                   </a>
                </div>
             </div>
 
-            <!-- Add/Cancel Buttons -->
+            <!-- Add/Back to Recipes Buttons -->
             <div class="row center-align">
                <div class="col s12">
                   <button class="btn waves-effect waves-light present-buttn" type="submit" name="action">Add Recipe</button>
