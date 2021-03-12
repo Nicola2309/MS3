@@ -2,7 +2,6 @@
 {% block content %}
 
 <h3  class="page-indicator"> Edit Recipe </h3>
-
 <section>
    <div class="row">
    <form class="form-width col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
@@ -118,7 +117,7 @@
                   <i class="far fa-list-alt prefix"></i>
                   <!--jinja for loop to display every method entry in array-->
                   {% for step in recipe.preparation %}
-                  <textarea id="preparation" name="preparation" type="text" class="form-control validate" aria-describedby="preparation" required>{{ step }}</textarea>
+                  <textarea id="preparation" name="preparation" class="form-control validate" aria-describedby="preparation" required>{{ step }}</textarea>
                   {% endfor %}
                </div>
             </div>
