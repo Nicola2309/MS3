@@ -148,7 +148,7 @@ def login():
                 existing_user["password"], request.form.get(
                     "password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(request.form.get("username")))
+                flash("Welcome back, {}".format(request.form.get("username")))
                 return redirect(url_for(
                         "profile", username=session["user"]))
             else:
@@ -249,6 +249,7 @@ def edit_profile(username):
     if request.method == "POST":
         submit = {
             "username": user["username"],
+            "email": request.form.get("email"),
             "password": user["password"],
             "user_img": request.form.get("user_img"),
         }
@@ -282,7 +283,7 @@ def delete_profile(username):
     This function allows the user to delete their account,
     sends a flash message that confirms the deletion and remove the user
     from the logged session
-    
+
     """
 
     mongo.db.users.remove({"username": username.lower()})
