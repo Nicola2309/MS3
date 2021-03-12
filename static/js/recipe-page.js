@@ -11,7 +11,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		if (ingr < max_ingr) {
 			ingr++;
-			$(wrapper_ingr).append('<div class="input-field col s12 ingr-input"><input id="ingredients" type="text" name="ingredients"/><label for="ingredients"></label><a href="#" class="remove_field"><i class="fas fa-trash-alt"></i></a></div>');
+			$(wrapper_ingr).append('<div class="input-field col s12 ingr-input"><input id="ingredients" type="text" name="ingredients"/><label for="ingredients" required></label><a href="#" class="remove_field"><i class="fas fa-trash-alt"></i></a></div>');
 		}
 	});
 
@@ -33,7 +33,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		if (step < max_steps) {
 			step++;
-			$(wrapper_step).append('<div class="input-field col s12 step-input"><textarea id="preparation" type="text" name="preparation"/></textarea><label for="preparation"></label><a href="#" class="remove_field"><i class="far fa-trash-alt"></i></a></div>');
+			$(wrapper_step).append('<div class="input-field col s12 step-input"><textarea id="preparation" type="text" name="preparation" required/></textarea><label for="preparation"></label><a href="#" class="remove_field"><i class="far fa-trash-alt"></i></a></div>');
 		}
 	});
 
@@ -63,7 +63,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		if (edit_prep_step < max_steps) {
 			edit_prep_step++;
-			$(edit_prep).append('<div class="input-field col s12 step-input"><textarea id="preparation" type="text" name="preparation"/></textarea><label for="preparation"></label><a href="#" class="remove_field"><i class="far fa-trash-alt"></i></a></div>');
+			$(edit_prep).append('<div class="input-field col s12 step-input"><textarea id="preparation" type="text" name="preparation" required/></textarea><label for="preparation"></label><a href="#" class="remove_field"><i class="far fa-trash-alt"></i></a></div>');
 		}
 	});
 
@@ -84,7 +84,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		if (edit_ingr_step < max_ingr) {
 			edit_ingr_step++;
-			$(edit_ingr).append('<div class="input-field col s12 ingr-input"><input id="ingredients" type="text" name="ingredients"/><label for="ingredients"></label><a href="#" class="remove_field"><i class="fas fa-trash-alt"></i></a></div>');
+			$(edit_ingr).append('<div class="input-field col s12 ingr-input"><input id="ingredients" type="text" name="ingredients"/><label for="ingredients" required></label><a href="#" class="remove_field"><i class="fas fa-trash-alt"></i></a></div>');
 		}
 	});
 });

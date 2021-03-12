@@ -201,7 +201,9 @@ The user sees a card with different articles, when clicking on the titles of the
 
 ### Bugs
 
-When clicking at the edges of the plus icon in the add/edit recipe page, which is used to add a new line for ingredients or recipe steps, instead of adding a new input line the user gets at the top of the page. The bug is unsolved.
+- When clicking at the edges of the plus icon in the add/edit recipe page, which is used to add a new line for ingredients or recipe steps, instead of adding a new input line the user gets at the top of the page. The bug is currently unsolved.
+
+- When Editing a recipe, if the user doesn't select another time the Category of the meal the form considers it empty and asks the user to select the category again. This bug is currently unsolved.
 
 I didn't find any other interesting bug.
 

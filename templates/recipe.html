@@ -3,16 +3,16 @@
 <h3 class="page-indicator">{{ recipe.recipe_name.title() }}</h3>
 
 <!-- Recipe Card -->
-<div class="card-panel" style="width: 85%;margin: auto;">
+<div class="card-panel center-recipe-data recipe-panel">
    <div class="row valign-wrapper">
 
       <!-- Recipe Image -->
       <div class="col s12 l6">
-         <figure>
             <img class="recipe-img" src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}" onerror="this.onerror=null;this.src='../static/images/ramen.jpg';">
 
+            <figure>
             <!--Recipe Source-->
-            <figcaption><i class="fas fa-camera recipe-card-icon"></i> Credits: {{ recipe.image_source }}</figcaption>
+            <figcaption class="center-align"><i class="fas fa-camera recipe-card-icon"></i> Credits: {{ recipe.image_source }}</figcaption>
          </figure>
       </div>
 
@@ -77,7 +77,7 @@
 </div>
 
 <!-- Description Section -->
-<div class="row" style="width: 87%;margin: auto;">
+<div class="row recipe-content">
    <div class="col s12">
       <h4 style="color: #FF8119;text-decoration: underline;">Brief Description: <br></h4>
       <h6>{{ recipe.description }}</h6>
