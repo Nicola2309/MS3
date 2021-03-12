@@ -24,7 +24,7 @@ To return to the previous document, please click [here](https://github.com/Nicol
     - [Using different browsers](#Using-different-browsers)
     - [Using different screen sizes](#Using-different-screen-sizes)
 - [**Manual tests**](#Manual-tests)
-    - [Navbar](#Navbar)
+    - [Navigation](#Navigation)
     - [Home](#Home)
     - [Recipes](#Recipes)
     - [Recipe](#Recipe)
@@ -111,18 +111,6 @@ I manually tested the design of the live project by doing the following:
 
 - Using Google Developer Tools to view the project on devices with different screen sizes.
 - Asking for feedback from friends and family who opened and interacted with the project on their devices.
-- [**Manual tests**](#Manual-tests)
-    - [Menu bar](#Menu-bar)
-    - [Home](#Home)
-    - [Recipes](#Recipes)
-    - [Recipe](#Recipe)
-    - [Articles](#Articles)
-    - [Login](#Login)
-    - [Register](#Register)
-    - [Profile](#Profile)
-    - [Edit profile](#Edit-profile)
-    - [Add recipe](#Add-recipe)
-    - [Edit recipe](#Edit-recipe)
 
 ### Manual tests
 
@@ -204,6 +192,11 @@ The user sees a card with different articles, when clicking on the titles of the
 - This page is very intuitive, the user gets a form containing all the input fields to create the new recipe. All the input fields are required, so they cannot be empty.
 - *Add Recipe* button - Passed, the user uploads the recipe and gets the flash message: 'Recipe Shared!'
 - *Back to Recipes* button - Passed, the user is directed to the recipes page
+
+#### Edit recipe
+- This page is very intuitive, the user gets a form containing all the input fields already filled by the recipe data. All the input fields are required, so the user can change them but notleave them empty.
+- *Save Changes* button - Passed, the user uploads the recipe and gets the flash message: 'Recipe Shared!'
+- *Cancel* button - Passed, the user is directed to the recipes page
 
 
 ### Bugs
