@@ -22,6 +22,11 @@ body {
     padding: 0;
 }
 
+p,
+h6{
+    font-family: Montserrat, sans-serif;
+}
+
 hr {
     width: 75%;
 }
@@ -82,7 +87,7 @@ hr {
 
 nav ul a {
     font-family: 'Lily Script One', cursive;
-    line-height: 135px;
+    line-height: 126px;
     font-size: 2em!important;
     color: #00CB00!important;
 }
@@ -171,6 +176,10 @@ i.medium {
 #h-plate,
 #copyright-margin {
     width: 81%;
+}
+
+#copyright:hover{
+    color:gold;    
 }
 
 #copyright-margin {
@@ -293,16 +302,32 @@ ul .list-style {
 }
 
 
-/* ------- form Single Recipe Page  ------- */
+/* ------- Single Recipe Page  ------- */
 
 .recipe-img {
     max-width: 100%;
 }
 
-.recipe-card-icon {
-    margin-right: 9px;
+.recipe-panel{
+    margin: auto;
+    width: 72%;
+}
+
+.center-recipe-data{
+    text-align: center;
     font-size: 1.4rem;
+}
+
+.recipe-card-icon {
+    display: block;
+    margin:auto;
+    font-size: 1.8rem;
     color: #ffae00;
+}
+
+.recipe-content{
+    width: 72%;
+    margin: 12px auto;
 }
 
 
@@ -317,7 +342,27 @@ ul .list-style {
 }
 
 .rem-height {
-    height: 2.2rem;
+    height: 4rem;
+}
+
+.form-recipe-icon-margin-1{
+    margin-left: -10px!important;
+}
+
+.form-recipe-icon-margin-2{
+    margin-left: -12px!important;
+}
+
+.append-btn-margin-1{
+    margin-left: -11px!important;
+}
+
+.append-btn-margin-2{
+    margin-left: -12px!important;
+}
+
+.dumbbell-margin{
+    margin-left: -14px!important;
 }
 
 .form-width {
@@ -337,6 +382,10 @@ ul .list-style {
 .input-field .fas,
 .input-field .far {
     margin-left: -2px;
+}
+
+.input-field .prefix {
+    color: #FF8119;
 }
 
 .input-field .prefix.active {
@@ -509,15 +558,9 @@ p a {
     .hide-on-med-and-down li a {
         font-size: 21px!important;
     }
-    .ml-screen-margin {
-        margin-top: 21%;
-    }
 }
 
-@media screen and (min-width: 1028px) {
-    .ml-screen-margin {
-        margin-top: -1%;
-    }
+@media screen and (min-width: 1035px) {
     .center-text {
         display: grid;
         margin: 8% 15%;
@@ -544,6 +587,21 @@ p a {
     }
 }
 
+@media screen and (max-width: 1028px) {
+    .recipe-panel{
+        width: 85%;
+    }
+    .center-recipe-data{
+        font-size: 1.2rem;
+    }
+    .recipe-card-icon{
+    font-size: 1.5rem;
+    }
+    .recipe-content{
+    width: 82%;
+}
+}
+
 @media screen and (max-width: 770px) {
     .present-logo {
         width: 33%;
@@ -560,6 +618,9 @@ p a {
     }
     .form-panel {
         width: 70%;
+    }
+    .center-recipe-data{
+        font-size: .8rem;
     }
 }
 
@@ -590,6 +651,7 @@ p a {
     .present {
         left: 201px;
         top: 22%;
+        right: 10px;
     }
     .present h5 {
         display: none;
@@ -631,8 +693,27 @@ p a {
     .edit-card .prefix {
         font-size: 1.5rem;
     }
-    rem-height {
-        height: 1.8rem;
+    .recipe-panel{
+        padding: 9px;
+    }
+    .form-recipe-icon-margin-1{
+    margin-left: -3px!important;
+    }
+
+    .form-recipe-icon-margin-2{
+        margin-left: -1px!important;
+    }
+
+    .append-btn-margin-1{
+        margin-left: -1px!important;
+    }
+
+    .append-btn-margin-2{
+        margin-left: -2px!important;
+    }
+
+    .dumbbell-margin{
+        margin-left: -5px!important;
     }
 }
 

@@ -201,7 +201,7 @@ The user sees a card with different articles, when clicking on the titles of the
 
 ### Bugs
 
-When clicking at the edges of the plus icon in the add/edit recipe page, which is used to add a new line for ingredients or procedure steps, instead of adding a new input line the user gets at the top of the page. Unsolved.
+When clicking at the edges of the plus icon in the add/edit recipe page, which is used to add a new line for ingredients or recipe steps, instead of adding a new input line the user gets at the top of the page. The bug is unsolved.
 
 I didn't find any other interesting bug.
 

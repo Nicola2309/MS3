@@ -414,4 +414,5 @@ I used this tutorials and code pieces to add different functionalities to the we
 
 - My mentor [Seun Owonikoko](https://github.com/seunkoko) for her attention to detail throughout the development process
 - The talented *Code Institute* tutors for the advices, guidance and support
-- And as always, a big thank you to my family and friends for making me countless cups of tea and giving honest feedback throughout
+- And as always, a big thank you to [Miranda Thewlis](https://github.com/mkthewlis) and her inspiring and well made repositories and documentation
+-  Thanks to my family and friends as well for giving me honest feedback throughout

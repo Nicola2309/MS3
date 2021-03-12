@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3  class="page-indicator"> Edit Recipe </h3>
 <section>
+    <h3  class="page-indicator"> Edit Recipe </h3>
    <div class="row">
       <form class="form-width col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
          <div class="card-panel edit-card">
