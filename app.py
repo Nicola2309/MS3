@@ -104,7 +104,7 @@ def register():
 
         # prevent username multiplication
         if existing_user:
-            flash("Username already exists")
+            flash("This username already taken, try with a new one!")
             return redirect(url_for("register"))
 
         # Elaborates data from the form sending it to the user collection
@@ -153,12 +153,12 @@ def login():
                         "profile", username=session["user"]))
             else:
                 # if the passwords don't match
-                flash("Incorrect Username and/or Password")
+                flash("Incorrect Username and/or Password, try again")
                 return redirect(url_for("login"))
 
         else:
             # Username doesn't exist
-            flash("Incorrect Username and/or Password")
+            flash("Incorrect Username and/or Password, try again")
             return redirect(url_for("login"))
 
     return render_template("login.html")
