@@ -249,9 +249,9 @@ def edit_profile(username):
     if request.method == "POST":
         submit = {
             "username": user["username"],
-            "email": request.form.get("email"),
+            "email": user["email"],
             "password": user["password"],
-            "user_img": request.form.get("user_img"),
+            "user_img": user["user_img"],
         }
         mongo.db.users.update({"username": session["user"]}, submit)
         flash("Profile Updated!")
