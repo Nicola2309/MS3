@@ -55,7 +55,7 @@ The following User Stories helped me to create a design that would satisfy the n
 
 #### New Users
 
-- I am a user who loves cooking and follow many cooking channels on the web, I would like to find an online cookbook where I can store and find new recipes.
+- I am a user who loves cooking and follows many cooking channels on the web, I would like to find an online cookbook where I can store and find new recipes.
 - I am a student user who needs to eat healthy to stay fit and focused, I would like a website in which I can find all the recipes I need to have an idea of a correct diet.
 
 #### Returning Users
@@ -66,7 +66,7 @@ The following User Stories helped me to create a design that would satisfy the n
 
 #### Frequent User
 
-- As a frequent user, I want to come back to the website and search for newly added recipes. 
+- As a frequent user, I want to come back to the website and search or add new recipes. 
 
 ### Design Process
 
@@ -191,7 +191,7 @@ It is not specified which one is wrong as a security feature to protect the acco
 - This page gives the possibility to the user to change their username, email, password or profile picture to restyle their profile.
 - There are two different buttons at the bottom of the page, one to save the changes and  one to cancel the changes and get redirected to the profile page.
 
-# Add recipe
+#### Add recipe
 
 - This page lets the logged in user add a new recipe in the cookbook. The user is asked to fill a form with all the recipe data like the name, category, preparation time, difficulty, recipe image, credits of the image, a brief description, the ingredients and the preparation steps.
 
@@ -249,9 +249,15 @@ It is not specified which one is wrong as a security feature to protect the acco
 - [Canva](https://www.canva.com/)
     * I used canva to create the website Logo.
 - [Google Fonts](https://fonts.google.com/)
-    * I used two complementary fonts from Google for my project
+    * I used two complementary fonts from Google for my project.
+- [Pexels](https://www.pexels.com/)
+    * This website was one of the sources for the images contained throughout the project.
+- [Pixabay](https://pixabay.com/)
+    * This website was another one of the sources for the images contained throughout the project.
+- [Am I Responsive](http://ami.responsivedesign.is/)
+    * This website was used to implement the responsive image of my website in the project. 
 - [Microsoft Phots](https://www.microsoft.com/en-us/p/microsoft-photos/9wzdncrfjbh4?activetab=pivot:overviewtab)
-    * This simple tool helped me shrink the pictures to share on the Readme file
+    * This simple tool helped me shrink the pictures to share on the Readme file.
 - [W3C Markup Validation Service](https://validator.w3.org/) 
     * This was a great tool throughout the project to check whether there were any errors in my HTML code (as discussed in more detail in the Testing section).
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
@@ -347,3 +353,65 @@ heroku git:remote -a ms3-move-on
 git push heroku master
 ``` 
 9. This completed the process of deploying the project to Heroku. Once deployed, I continued to push all changes made to the project to Heroku throughout the remaining development process.
+
+## Credits
+
+### Content
+
+Website Text: Beside the copyright text for the [Harvard Plate](https://github.com/Nicola2309/MS3/blob/master/static/images/harvard-plate.jpg) and the Articles title in the Articles html page, all the text in the website was written by myself.
+
+### Images
+
+The Images from Pexels and Pixabay are referenced below
+
+#### Pexels
+
+- [Kid hand holding a plant](https://www.pexels.com/photo/person-holding-a-green-plant-1072824/)
+
+- [Plate of chicken and salad](https://www.pexels.com/nl-nl/foto/gekookt-eten-1860208/)
+
+- [Two bowls of Ramen](https://www.pexels.com/nl-nl/foto/groentesalade-3026808/)
+
+- [Mother and daughter preparing food](https://www.pexels.com/nl-nl/foto/moeder-en-dochter-die-avocadotoost-voorbereiden-4259707/)
+
+- [Girl eating cookies and grandma talking](https://www.pexels.com/nl-nl/foto/nadenkend-grootmoeder-met-kleindochter-met-interessant-gesprek-tijdens-het-samen-koken-in-lichte-moderne-keuken-3768146/)
+
+- [Kid mixing pasta supervised by two adults](https://www.pexels.com/nl-nl/foto/mannen-met-een-kind-in-een-keuken-4261782/)
+
+- [Family around a mom cooking](https://www.pexels.com/nl-nl/foto/foto-van-vrouw-koken-in-de-buurt-van-haar-familie-3807332/)
+
+- [A person making dough](https://www.pexels.com/nl-nl/foto/persoon-met-wit-poeder-op-bruin-houten-tafel-6287264/)
+
+- [Open fridge containing vegetables]( https://www.pexels.com/nl-nl/foto/voedsel-gezond-groenten-apple-4443442/)
+
+- [Plate filled with cut vegetables on a table with vegetables and spices on](https://www.pexels.com/nl-nl/foto/plat-lag-fotografie-van-groentesalade-op-plaat-1640777/)
+
+- [View of crop fields and hills](https://www.pexels.com/nl-nl/foto/bruine-en-groene-bergzichtfoto-842711/)
+
+#### Pixabay
+
+- [Paprika in water](https://pixabay.com/nl/photos/paprika-water-fruit-rood-voedsel-5126804/)
+
+- [Couple preparing food](https://pixabay.com/nl/photos/vrouw-keuken-man-dagelijks-leven-1979272/)
+
+- [Planet earth on a plant](https://pixabay.com/nl/illustrations/aarde-globe-geboorte-nieuwe-405096/)
+
+- [Planet earth in a light bulb](https://pixabay.com/nl/photos/aarde-planet-continenten-licht-2581631/)
+
+- [Weekly timetable](https://pixabay.com/nl/illustrations/tijdschema-papier-print-template-3224768/)
+
+## Additional support
+
+I used this tutorials and code pieces to add different functionalities to the website.
+
+- [Changing navbar color after scrolling](https://stackoverflow.com/questions/23706003/changing-nav-bar-color-after-scrolling)
+
+- Stick the footer at the bottom when the page is emptier from [smashtheshell](https://www.youtube.com/watchv=TaXql0h_wCA&ab_channel=smashtheshell)
+
+- Code inspired from my fellow student [iainm342](https://github.com/iainm342/milestone-3/blob/main/static/js/recipe.js) to add extra ingredients and preparation steps lines in the 'Add Recipe' form, through Javascript.
+
+## Acknowledgements
+
+- My mentor [Seun Owonikoko](https://github.com/seunkoko) for her attention to detail throughout the development process
+- The talented *Code Institute* tutors for the advices, guidance and support
+- And as always, a big thank you to my family and friends for making me countless cups of tea and giving honest feedback throughout
