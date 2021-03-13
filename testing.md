@@ -10,6 +10,8 @@ The testing process below inludes:
 
 To return to the previous document, please click [here](https://github.com/Nicola2309/MS3/blob/master/README.md).
 
+## Table of contents
+
 - [**Testing User Stories**](#Testing-User-Stories)
     - [Project Stakeholder](#Project-stakeholder)
     - [New users](#New-users)
