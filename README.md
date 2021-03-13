@@ -81,7 +81,7 @@ My research helped understand that:
 - [Budget Bytes](https://www.budgetbytes.com/)
 - [Cooking Classy](https://www.cookingclassy.com/)
 - [Downshiftology](https://downshiftology.com/)
-- [Pich of Yum](https://pinchofyum.com/)
+- [Pinch of Yum](https://pinchofyum.com/)
 - [The Recipe Critic](https://therecipecritic.com/)
 
 
@@ -152,7 +152,7 @@ The landing picture has a big red pepper falling into water communicating freshn
 - The user reads two short sentences tha explain immediately what the website purpose is, make them prepare healthy days.
 - The user has two options, or continuing the reading of the content or jump to the recipes page.
 - Scrolling down, the user reads the idea behind the website in 3 brief paragraphs.
-- Proceeding further the user can see the ["Healthy Eating Plate"](https://github.com/Nicola2309/MS3/blob/master/static/images/harvard-plate.jpg), the use is kindly permitted from Harvard with the mandatory rule of adding the copyright under the picture in the website and that it wouldn't be associated to any commercial purpose website.
+- Proceeding further the user can see the ["Healthy Eating Plate"](https://github.com/Nicola2309/MS3/blob/master/static/images/harvard-plate.jpg), the use is kindly allowed from Harvard with the mandatory rule of adding the copyright under the picture in the website, not modifying the picture in any way, and that it wouldn't be associated to any commercial purpose website.
 There the user will find a button that brings them to the Articles page.
 - The third and last section is dedicated to cooking together and being a team in the kitchen so to ease the work for everyone and prepare more things, a carousel with five different pictures suggests all the situations in which people can team up and prepare food.
 
@@ -362,7 +362,11 @@ Website Text: Beside the copyright text for the [Harvard Plate](https://github.c
 
 ### Images
 
-The Images from Pexels and Pixabay are referenced below
+The Images are referenced below
+
+#### Harvard T.H. Chan Public Health School
+
+- [Healthy Eating Plate](https://www.hsph.harvard.edu/nutritionsource/healthy-eating-plate/)
 
 #### Pexels
 
